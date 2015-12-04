@@ -216,7 +216,6 @@ table.stories {
 table.stories td {
   vertical-align: top;
   background-color: #ccc;
-  @include border-radius(5px 5px 0 0);
 }
 
 div.storycolumn {
@@ -232,7 +231,6 @@ div.storycolumn {
   color: #eee;
   padding: 0.2em 0.2em 0.2em 1em;
   text-transform:capitalize;
-  @include border-radius(5px 5px 0 0);
   a.toggle-column{
     color: #eee;
     text-decoration: none;
@@ -722,12 +720,12 @@ div.spinner {
   }
 }
 
-div#keycut-help { 
-  top: 1em; left: 1em; 
-  position: absolute; opacity:0.8; 
+div#keycut-help {
+  top: 1em; left: 1em;
+  position: absolute; opacity:0.8;
   background:black; color:yellow;
   @include border-radius(5px);
-  
+
   a.close {
     color:yellow; text-align:right; display:block; margin:1em;
   }
