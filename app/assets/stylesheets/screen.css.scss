@@ -193,10 +193,9 @@ html.stories, html.stories body, html.stories div#main {
 
 #column-toggles a {
   margin: 0 0.2em;
-  padding: 3px;
+  padding: 5px 8px;
   color: white;
   background-color: $darkgrey;
-  @include border-radius(3px);
   text-decoration: none;
   text-shadow: none;
 }
