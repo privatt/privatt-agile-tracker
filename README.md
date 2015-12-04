@@ -8,10 +8,6 @@ details.
 
 [![Build Status](https://travis-ci.org/fulcrum-agile/fulcrum.png?branch=master)](https://travis-ci.org/fulcrum-agile/fulcrum)
 
-
-
-![Fulcrum Screenshot](https://github.com/fulcrum-agile/fulcrum/raw/master/doc/screenshot.png)
-
 Get involved
 ------------
 
