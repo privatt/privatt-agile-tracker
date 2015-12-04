@@ -6,7 +6,7 @@ system for agile development teams.  See
 [the project page](http://wholemeal.co.nz/projects/fulcrum.html) for more
 details.
 
-[![Build Status](https://travis-ci.org/fulcrum-agile/fulcrum.png?branch=master)](https://travis-ci.org/fulcrum-agile/fulcrum)
+[![Build Status](https://travis-ci.org/jimbeaudoin/agile-tracker.svg)](https://travis-ci.org/jimbeaudoin/agile-tracker)
 
 Get involved
 ------------
