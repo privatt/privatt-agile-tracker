@@ -83,8 +83,7 @@ ul#primary-nav li.secondary {
   @include icons-sprite(collapse, false, 0px, 6px);
   background-color: #333;
   background-position-x:right;
-  padding: 0.4em 18px 0.4em 0.4em;
-  @include border-radius(5px);
+  padding: 0.4em 20px 0.4em 0.8em;
   text-shadow: black 0 1px 0;
 }
 ul#primary-nav li.secondary ul {
@@ -98,7 +97,6 @@ ul#primary-nav li.secondary ul {
   position: absolute;
   left: 0; top: 1.7em;
   background-color: #333;
-  @include border-radius(0 5px 5px 5px);
 }
 ul#primary-nav li.secondary ul li {
   white-space: nowrap;
