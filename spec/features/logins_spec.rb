@@ -4,7 +4,8 @@ describe "Logins" do
 
   let(:user)  {
     FactoryGirl.create :user, :email => 'user@example.com',
-                              :password => 'password'
+                              :password => 'password',
+                              :name => 'user 1'
   }
 
   describe "disable registration" do
@@ -41,7 +42,7 @@ describe "Logins" do
       click_button 'Sign in'
 
       page.should have_selector('h1', :text => 'Listing Projects')
-      page.should have_selector('#primary-nav', :text => 'user@example.com')
+      page.should have_selector('#primary-nav', :text => 'user 1')
     end
 
   end
