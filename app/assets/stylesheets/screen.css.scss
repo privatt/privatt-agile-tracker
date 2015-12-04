@@ -83,7 +83,7 @@ ul#primary-nav li.secondary {
   @include icons-sprite(collapse, false, 0px, 6px);
   background-color: #333;
   background-position-x:right;
-  padding: 0.4em 20px 0.4em 0.8em;
+  padding: 5px 20px 5px 0.8em;
   text-shadow: black 0 1px 0;
 }
 ul#primary-nav li.secondary ul {
@@ -102,6 +102,15 @@ ul#primary-nav li.secondary ul li {
   white-space: nowrap;
   text-align: left;
   display: block;
+}
+
+ul#primary-nav li.secondary ul li a {
+  display: block;
+  padding: 5px;
+}
+
+ul#primary-nav li.secondary ul li:hover {
+  background-color: #444;
 }
 
 #title_bar {
