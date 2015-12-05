@@ -165,18 +165,23 @@ ul#primary-nav li.secondary ul li:hover {
   }
 
   #add_story {
-    @include background(sprite($icons-sprites, feature, 2, 2),
-                        linear-gradient(top, $aluminium-3, $aluminium-3*0.75));
-    background-repeat: no-repeat;
-    margin: 0;
-    padding: 0.2em 0.4em 0.2em 18px;
-    @include border-radius(3px);
+    background-color: $darkgrey;
     border: 1px solid $aluminium-5;
     cursor: pointer;
-    font-size: small;
-    color: white;
-    text-shadow:  $aluminium-5 0 1px 0;
-    text-decoration: none;
+    display: inline-block;
+    padding: 2px;
+    padding-right: 4px;
+    padding-top: 3px;
+
+    a {
+      @include background(sprite($icons-sprites, feature));
+      background-repeat: no-repeat;
+      color: white;
+      font-size: small;
+      text-shadow:  $aluminium-5 0 1px 0;
+      text-decoration: none;
+      padding-left: 18px;
+    }
   }
 }
 
