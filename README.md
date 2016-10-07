@@ -6,19 +6,13 @@ This project is a fork of https://github.com/fulcrum-agile/fulcrum
 
 ## New Development Path
 
-- The backend is going to be separated from the frontend. There is going to be two separate repos.
-- The Backbone application is going to be removed and replaced by an Ember application.
+- [ ] The rails application is going to become an API only
+- [ ] The back end is going to be separated from the front end. There is going to be two separate repos.
+- [ ] The Backbone application is going to be removed and replaced by an Ember application.
+
 
 Installation
 ------------
-
-Fulcrum is still a work in progress, but if you're really keen to try it out
-these instructions will hopefully help you get up and running.
-
-First up, your system will need the
-[prerequisites for running Ruby on Rails installed](http://rubyonrails.org/download)
-
-Once you have these:
 
     # Checkout the project
     $ git clone git://github.com/fulcrum-agile/fulcrum.git
