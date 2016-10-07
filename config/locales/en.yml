@@ -2,6 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 en:
+  app-name: "Agile Tracker"
   fulcrum:  "Fulcrum"
 
   log out:  "Log out"
@@ -41,7 +42,7 @@ en:
   n weeks:
     one: '1 week'
     other: '%{count} weeks'
-  
+
   keycuts:
     keyboard_shortcuts: Keyboard shortcuts
     help: Help (this)
@@ -55,7 +56,7 @@ en:
     toggle_my_work: Toggle my work
     toggle_labels_searches: Toggle labels &amp; searches
     toggle_current: Toggle current
-  
+
   activerecord:
     models:
       user:
