@@ -6,6 +6,7 @@ This project is a fork of https://github.com/fulcrum-agile/fulcrum
 
 ## New Development Path
 
+- [ ] The look and feel of the original application is going to be redone
 - [ ] The rails application is going to become an API only
 - [ ] The back end is going to be separated from the front end. There is going to be two separate repos.
 - [ ] The Backbone application is going to be removed and replaced by an Ember application.
