@@ -20,7 +20,7 @@ group :postgres do
 end
 
 group :mysql do
-  gem 'mysql2'
+  gem mysql2
 end
 
 group :production do
