@@ -14,8 +14,6 @@ gem 'rails-observers', '~> 0.1.2'
 gem 'jquery-ui-rails'
 
 gem 'pg'
-gem 'mysql2'
-gem 'sqlite3'
 
 group :production do
   gem 'rails_12factor'
