@@ -2,23 +2,20 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: fulcrum_development
+  database: privatt_agile_tracker_dev
   pool: 5
   username: postgres
-  password:
 
 test:
   adapter: postgresql
   encoding: unicode
-  database: fulcrum_test
+  database: privatt_agile_tracker_test
   pool: 5
   username: postgres
-  password:
 
 production:
   adapter: postgresql
   encoding: unicode
-  database: fulcrum_production
+  database: privatt_agile_tracker_prod
   pool: 5
   username: postgres
-  password:
