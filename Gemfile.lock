@@ -126,11 +126,6 @@ GEM
       railties (~> 4.0)
     rails-observers (0.1.2)
       activemodel (~> 4.0)
-    rails_12factor (0.0.3)
-      rails_serve_static_assets
-      rails_stdout_logging
-    rails_serve_static_assets (0.0.4)
-    rails_stdout_logging (0.0.3)
     railties (4.1.9)
       actionpack (= 4.1.9)
       activesupport (= 4.1.9)
@@ -225,7 +220,6 @@ DEPENDENCIES
   rails (~> 4.1.9)
   rails-i18n
   rails-observers (~> 0.1.2)
-  rails_12factor
   rspec-activemodel-mocks
   rspec-its
   rspec-rails
