@@ -1,5 +1,6 @@
 language: ruby
 cache: bundler
+sudo: required
 env:
   - "DB=mysql"
   - "DB=postgresql"
