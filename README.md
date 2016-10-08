@@ -16,8 +16,8 @@ Installation
 ------------
 
     # Checkout the project
-    $ git clone git://github.com/fulcrum-agile/fulcrum.git
-    $ cd fulcrum
+    $ git clone https://github.com/jimbeaudoin/agile-tracker.git
+    $ cd agile-tracker
 
     # Install the project dependencies
     $ gem install bundler
