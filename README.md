@@ -41,7 +41,10 @@ Fulcrum is built with the following Open Source technologies:
 License
 -------
 Copyright (c) Privatt Inc. 2016
-Copyright 2011-2015, Malcolm Locke. Copyright (c) 2016 Jimmy Beaudoin
+
+Copyright (c) 2015-2016 Jimmy Beaudoin
+
+Copyright 2011-2015, Malcolm Locke.
 
 Privatt Agile Tracker is made available under the Affero GPL license version 3, see
 LICENSE.txt.
