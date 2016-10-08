@@ -1,6 +1,6 @@
 # Agile Tracker
 
-[![Build Status](https://travis-ci.org/jimbeaudoin/agile-tracker.svg)](https://travis-ci.org/jimbeaudoin/agile-tracker)
+[![Build Status](https://travis-ci.org/privatt/privatt-agile-tracker.svg?branch=master)](https://travis-ci.org/privatt/privatt-agile-tracker)
 
 This project is a fork of https://github.com/fulcrum-agile/fulcrum
 
