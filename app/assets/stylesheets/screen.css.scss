@@ -49,7 +49,6 @@ a img {
 
 #header {
   background: $darkgrey;
-  @include background(linear-gradient(top, $darkgrey, $darkgrey*0.75));
   border-bottom: 1px solid $darkgrey*0.7;
   @include box-shadow(0 1px 2px #aaaaaa);
   position: relative;
