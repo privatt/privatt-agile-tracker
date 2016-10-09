@@ -1,7 +1,11 @@
 <h1><%= project.name %></h1>
 
 <%- if defined? show_column_toggles -%>
-<div id="column-toggles"></div>
+  <div id="column-toggles">
+  <div id="add_story">
+    <a href="#">+ <%= t('add story') %></a>
+  </div>
+</div>
 <%- end -%>
 
 <%= link_to_unless_current Story.model_name.human(:count => 2), project_path(project) %> |
