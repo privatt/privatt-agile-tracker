@@ -71,6 +71,8 @@ ul#primary-nav li {
 ul#primary-nav li a {
   color: white;
   text-decoration: none;
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
 }
 ul#primary-nav li.root {
   float: left;
@@ -78,10 +80,10 @@ ul#primary-nav li.root {
 }
 ul#primary-nav li.secondary {
   position: relative;
-  @include icons-sprite(collapse, false, 0px, 6px);
-  background-color: #333;
-  background-position-x:right;
-  padding: 5px 20px 5px 0.8em;
+  // @include icons-sprite(collapse, false, 0px, 6px);
+  // padding: 1em ;
+  // background-position-x:right;
+  // padding: 5px 20px 5px 0.8em;
 }
 ul#primary-nav li.secondary ul {
   visibility: hidden;
@@ -92,7 +94,8 @@ ul#primary-nav li.secondary:hover ul {
 ul#primary-nav li.secondary ul {
   padding: 0.3em;
   position: absolute;
-  left: 0; top: 1.7em;
+  left: 0;
+  top: 2.3em;
   background-color: #333;
 }
 ul#primary-nav li.secondary ul li {
