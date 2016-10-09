@@ -52,7 +52,6 @@ a img {
   @include background(linear-gradient(top, $darkgrey, $darkgrey*0.75));
   border-bottom: 1px solid $darkgrey*0.7;
   @include box-shadow(0 1px 2px #aaaaaa);
-  text-shadow: black 0 1px 0;
   position: relative;
   z-index: 900;
 }
@@ -84,7 +83,6 @@ ul#primary-nav li.secondary {
   background-color: #333;
   background-position-x:right;
   padding: 5px 20px 5px 0.8em;
-  text-shadow: black 0 1px 0;
 }
 ul#primary-nav li.secondary ul {
   visibility: hidden;
