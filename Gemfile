@@ -15,6 +15,9 @@ gem 'jquery-ui-rails'
 
 gem 'pg'
 
+# For assets compilation and migration on remote servers
+gem 'therubyracer', platforms: :ruby
+
 group :development do
   gem 'letter_opener'
 end
