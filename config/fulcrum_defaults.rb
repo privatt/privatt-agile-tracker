@@ -3,7 +3,7 @@ Configuration.for('fulcrum') do
   app_host ENV['APP_HOST'] || '127.0.0.1:3000'
 
   # The address which system emails will originate from.
-  mailer_sender ENV['MAILER_SENDER'] || 'noreply@example.com'
+  mailer_sender ENV['MAILER_SENDER'] || 'noreply@agile-tracker.privatt.io'
 
   # Disable registration pages
   disable_registration ENV['DISABLE_REGISTRATION'] || true
