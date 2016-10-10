@@ -33,3 +33,7 @@ group :development, :test do
   gem 'database_cleaner'
   gem 'quiet_assets'
 end
+
+group :production do
+  gem 'unicorn', '5.1.0'
+end
