@@ -142,9 +142,9 @@ GEM
       activemodel (>= 3.0)
       activesupport (>= 3.0)
       rspec-mocks (>= 2.99, < 4.0)
-    rspec-core (3.2.2)
+    rspec-core (3.2.3)
       rspec-support (~> 3.2.0)
-    rspec-expectations (3.2.0)
+    rspec-expectations (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-its (1.2.0)
@@ -153,7 +153,7 @@ GEM
     rspec-mocks (3.2.1)
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
-    rspec-rails (3.2.1)
+    rspec-rails (3.2.3)
       actionpack (>= 3.0, < 4.3)
       activesupport (>= 3.0, < 4.3)
       railties (>= 3.0, < 4.3)
@@ -234,7 +234,7 @@ DEPENDENCIES
   rails-observers (~> 0.1.2)
   rspec-activemodel-mocks
   rspec-its
-  rspec-rails
+  rspec-rails (= 3.2.3)
   sass-rails (~> 4.0.3)
   selenium-webdriver
   sinon-rails
