@@ -57,11 +57,8 @@ a img {
 
 ul#primary-nav {
   text-align: right;
-  background-image: image-url('logo.png');
-  background-repeat: no-repeat;
-  background-position: 13px 6px;
   margin: 0;
-  padding: 1em 1em 1em 40px;
+  padding: 1em;
   color: white;
 }
 ul#primary-nav li {
@@ -80,10 +77,6 @@ ul#primary-nav li.root {
 }
 ul#primary-nav li.secondary {
   position: relative;
-  // @include icons-sprite(collapse, false, 0px, 6px);
-  // padding: 1em ;
-  // background-position-x:right;
-  // padding: 5px 20px 5px 0.8em;
 }
 ul#primary-nav li.secondary ul {
   visibility: hidden;
