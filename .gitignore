@@ -9,3 +9,5 @@ tmp/
 *.DS_Store
 config/deploy.rb
 *.swp
+deploy.sh
+public/assets
