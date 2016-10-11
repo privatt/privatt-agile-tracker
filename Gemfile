@@ -30,7 +30,7 @@ group :development, :test do
   gem 'factory_girl_rails'
   gem 'jasmine-rails'
   gem 'sinon-rails'
-  gem 'capybara'
+  gem 'capybara', '2.5.0'
   gem 'selenium-webdriver'
   gem 'poltergeist'
   gem 'database_cleaner'
