@@ -24,7 +24,7 @@ describe Changeset do
       end
 
       it "must have a valid story" do
-        changeset.story_id = "invalid"
+        changeset.story_id = "00000000-0000-0000-0000-000000000000"
         changeset.valid?
         expect(changeset.errors[:story].size).to eq(1)
       end
