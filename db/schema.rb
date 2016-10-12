@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "changesets", force: true do |t|
     t.integer  "story_id"
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"
     t.string   "point_scale",         default: "fibonacci"
     t.date     "start_date"
