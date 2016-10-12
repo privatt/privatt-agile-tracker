@@ -9,7 +9,7 @@ class CreateStories < ActiveRecord::Migration
       t.date :accepted_at
       t.integer :requested_by_id
       t.integer :owned_by_id
-      t.references :project
+      t.uuid :project_id
 
       t.timestamps
     end

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
 
   create_table "changesets", force: true do |t|
     t.integer  "story_id"
-    t.integer  "project_id"
+    t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -44,7 +44,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "projects_users", id: false, force: true do |t|
-    t.integer "project_id"
+    t.uuid    "project_id"
     t.integer "user_id"
   end
 
@@ -57,7 +57,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.date     "accepted_at"
     t.integer  "requested_by_id"
     t.integer  "owned_by_id"
-    t.integer  "project_id"
+    t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "position"
