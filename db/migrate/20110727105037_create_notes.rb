@@ -3,7 +3,7 @@ class CreateNotes < ActiveRecord::Migration
     create_table :notes do |t|
       t.text :note
       t.uuid :user_id
-      t.integer :story_id
+      t.uuid :story_id
 
       t.timestamps
     end

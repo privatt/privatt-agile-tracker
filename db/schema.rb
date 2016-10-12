@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   enable_extension "uuid-ossp"
 
   create_table "changesets", force: true do |t|
-    t.integer  "story_id"
+    t.uuid     "story_id"
     t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -27,7 +27,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   create_table "notes", force: true do |t|
     t.text     "note"
     t.uuid     "user_id"
-    t.integer  "story_id"
+    t.uuid     "story_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.uuid "user_id"
   end
 
-  create_table "stories", force: true do |t|
+  create_table "stories", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "title"
     t.text     "description"
     t.integer  "estimate"
