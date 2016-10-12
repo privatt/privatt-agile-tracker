@@ -1,6 +1,6 @@
 class DeviseCreateUsers < ActiveRecord::Migration
   def self.up
-    create_table(:users) do |t|
+    create_table :users, id: :uuid do |t|
       # t.database_authenticatable :null => false
       t.string :email,              :null => false, :default => ""
       t.string :encrypted_password, :null => false, :default => ""

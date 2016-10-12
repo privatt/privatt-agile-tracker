@@ -7,8 +7,8 @@ class CreateStories < ActiveRecord::Migration
       t.string :story_type, :default => 'feature'
       t.string :state, :default => 'unstarted'
       t.date :accepted_at
-      t.integer :requested_by_id
-      t.integer :owned_by_id
+      t.uuid :requested_by_id
+      t.uuid :owned_by_id
       t.uuid :project_id
 
       t.timestamps
