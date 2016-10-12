@@ -26,7 +26,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
 
   create_table "notes", force: true do |t|
     t.text     "note"
-    t.integer  "user_id"
+    t.uuid     "user_id"
     t.integer  "story_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -44,8 +44,8 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "projects_users", id: false, force: true do |t|
-    t.uuid    "project_id"
-    t.integer "user_id"
+    t.uuid "project_id"
+    t.uuid "user_id"
   end
 
   create_table "stories", force: true do |t|
@@ -55,8 +55,8 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.string   "story_type",      default: "feature"
     t.string   "state",           default: "unstarted"
     t.date     "accepted_at"
-    t.integer  "requested_by_id"
-    t.integer  "owned_by_id"
+    t.uuid     "requested_by_id"
+    t.uuid     "owned_by_id"
     t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
@@ -64,7 +64,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.string   "labels"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "email",                  default: "",   null: false
     t.string   "encrypted_password",     default: "",   null: false
     t.string   "reset_password_token"
