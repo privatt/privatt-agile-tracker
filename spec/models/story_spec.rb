@@ -44,7 +44,7 @@ describe Story do
       end
 
       it "must have a valid project_id" do
-        subject.project_id = "invalid"
+        subject.project_id = "00000000-0000-0000-0000-000000000000"
         subject.valid?
         expect(subject.errors[:project].size).to eq(1)
       end
@@ -84,7 +84,7 @@ describe Story do
   end
 
   describe "#estimated?" do
-    
+
     context "when estimate is nil" do
       before { subject.estimate = nil }
       it { should_not be_estimated }
@@ -195,7 +195,7 @@ describe Story do
       end
 
       it "is unset when state changes from 'accepted'" do
-        subject.accepted_at = Date.parse('1999/01/01') 
+        subject.accepted_at = Date.parse('1999/01/01')
         subject.update_attribute :state, 'accepted'
         subject.update_attribute :state, 'started'
         subject.accepted_at.should be_nil

@@ -2,7 +2,7 @@ class CreateChangesets < ActiveRecord::Migration
   def self.up
     create_table :changesets do |t|
       t.references :story
-      t.references :project
+      t.uuid :project_id
 
       t.timestamps
     end

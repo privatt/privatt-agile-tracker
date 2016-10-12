@@ -15,10 +15,11 @@ ActiveRecord::Schema.define(version: 20120504152649) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+  enable_extension "uuid-ossp"
 
   create_table "changesets", force: true do |t|
     t.integer  "story_id"
-    t.integer  "project_id"
+    t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -31,7 +32,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.datetime "updated_at"
   end
 
-  create_table "projects", force: true do |t|
+  create_table "projects", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
     t.string   "name"
     t.string   "point_scale",         default: "fibonacci"
     t.date     "start_date"
@@ -43,7 +44,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "projects_users", id: false, force: true do |t|
-    t.integer "project_id"
+    t.uuid    "project_id"
     t.integer "user_id"
   end
 
@@ -56,7 +57,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.date     "accepted_at"
     t.integer  "requested_by_id"
     t.integer  "owned_by_id"
-    t.integer  "project_id"
+    t.uuid     "project_id"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "position"
