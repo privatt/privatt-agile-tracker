@@ -18,7 +18,7 @@ describe Changeset do
       let(:changeset) { FactoryGirl.create :changeset, :story => story, :project => project }
 
       it "must have a valid project" do
-        changeset.project_id = "invalid"
+        changeset.project_id = "00000000-0000-0000-0000-000000000000"
         changeset.valid?
         expect(changeset.errors[:project].size).to eq(1)
       end
