@@ -32,7 +32,7 @@ group :development, :test do
   gem 'sinon-rails', '1.15.0'
   gem 'capybara', '2.10.1'
   gem 'selenium-webdriver','2.53.4'
-  gem 'poltergeist'
+  gem 'poltergeist','1.11.0'
   gem 'database_cleaner'
   gem 'quiet_assets'
 end
