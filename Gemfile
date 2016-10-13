@@ -27,7 +27,7 @@ group :development, :test do
   gem 'rspec-rails', '3.4.2'
   gem 'rspec-its', '1.2.0'
   gem 'rspec-activemodel-mocks', '1.0.3'
-  gem 'factory_girl_rails'
+  gem 'factory_girl_rails', '4.7.0'
   gem 'jasmine-rails'
   gem 'sinon-rails'
   gem 'capybara', '2.10.1'
