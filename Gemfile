@@ -26,7 +26,7 @@ group :development, :test do
   gem 'pry'
   gem 'rspec-rails', '3.4.2'
   gem 'rspec-its', '1.2.0'
-  gem 'rspec-activemodel-mocks'
+  gem 'rspec-activemodel-mocks', '1.0.3'
   gem 'factory_girl_rails'
   gem 'jasmine-rails'
   gem 'sinon-rails'
