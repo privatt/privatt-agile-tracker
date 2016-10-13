@@ -29,7 +29,7 @@ group :development, :test do
   gem 'rspec-activemodel-mocks', '1.0.3'
   gem 'factory_girl_rails', '4.7.0'
   gem 'jasmine-rails', '0.14.1'
-  gem 'sinon-rails'
+  gem 'sinon-rails', '1.15.0'
   gem 'capybara', '2.10.1'
   gem 'selenium-webdriver'
   gem 'poltergeist'

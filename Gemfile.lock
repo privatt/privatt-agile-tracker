@@ -175,7 +175,7 @@ GEM
       multi_json (~> 1.0)
       rubyzip (~> 1.0)
       websocket (~> 1.0)
-    sinon-rails (1.10.3)
+    sinon-rails (1.15.0)
       railties (>= 3.1)
     slop (3.6.0)
     sprockets (2.12.4)
@@ -238,7 +238,7 @@ DEPENDENCIES
   rspec-rails (= 3.4.2)
   sass-rails (~> 4.0.3)
   selenium-webdriver
-  sinon-rails
+  sinon-rails (= 1.15.0)
   therubyracer
   transitions (= 0.1.9)
   uglifier (>= 2.5.3)
