@@ -234,7 +234,7 @@ DEPENDENCIES
   rails-i18n
   rails-observers (~> 0.1.2)
   rspec-activemodel-mocks
-  rspec-its
+  rspec-its (= 1.2.0)
   rspec-rails (= 3.4.2)
   sass-rails (~> 4.0.3)
   selenium-webdriver
