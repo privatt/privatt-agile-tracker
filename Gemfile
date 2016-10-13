@@ -31,7 +31,7 @@ group :development, :test do
   gem 'jasmine-rails', '0.14.1'
   gem 'sinon-rails', '1.15.0'
   gem 'capybara', '2.10.1'
-  gem 'selenium-webdriver', '3.0.0'
+  gem 'selenium-webdriver'
   gem 'poltergeist'
   gem 'database_cleaner'
   gem 'quiet_assets'
