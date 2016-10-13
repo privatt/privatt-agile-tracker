@@ -4,6 +4,27 @@
 
 Original Source Code: https://github.com/fulcrum-agile/fulcrum
 
+## Database Prerequisite
+
+This application is using UUID as identifier.
+
+You must add the following extension to your PostgreSQL installation:
+
+    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+OR, you can execute this commands:
+
+    bundle exec rake db:setup
+
+You must be a superuser on your PostgreSQL database to execute the above
+command. With `psql`, you can add or remove yourself as a superuser with
+the following commands:
+
+    ALTER ROLE <username> WITH SUPERUSER;
+    # After the setup, remove the role
+    ALTER ROLE <username> WITH NOSUPERUSER;
+
+You can see your roles with `\du` while using `psql`.
 
 Installation
 ------------
