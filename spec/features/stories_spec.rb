@@ -40,6 +40,7 @@ describe "Stories" do
 
       within('#in_progress .story') do
         click_on 'finish'
+        sleep(1.second)
         click_on 'deliver'
         click_on 'accept'
       end
