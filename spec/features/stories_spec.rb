@@ -26,7 +26,7 @@ describe "Stories" do
 
       click_on 'Add story'
 
-      within('#chilly_bin .story') do
+      within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
         click_on 'Save'
       end
