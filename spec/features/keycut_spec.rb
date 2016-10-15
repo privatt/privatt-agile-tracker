@@ -41,7 +41,7 @@ describe "Keycuts" do
 
     it 'adds story (a)', :js => true do
       send_keys 'a'
-      page.should have_css('.story.feature.unscheduled.unestimated.editing')
+      page.should have_css('.story.editing')
     end
 
     it 'saves currently open story (<ctl> + s)', js: true, driver: :selenium do
