@@ -45,7 +45,8 @@ describe "Keycuts" do
     end
 
     it 'saves currently open story (<ctl> + s)', js: true, driver: :selenium do
-      click_on 'Add story'
+      click_on '+ Add story'
+
       within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
       end

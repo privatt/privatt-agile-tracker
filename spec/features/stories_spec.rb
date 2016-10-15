@@ -25,7 +25,7 @@ describe "Stories" do
     it "steps through the full story life cycle", :js => true do
       visit project_path(project)
 
-      click_on 'Add story'
+      click_on '+ Add story'
 
       within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
