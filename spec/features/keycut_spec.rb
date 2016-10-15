@@ -5,7 +5,7 @@ describe "Keycuts" do
   self.use_transactional_fixtures = false
 
   before(:each) do
-    Capybara.default_max_wait_time = 5
+    Capybara.default_max_wait_time = 10
     ActionController::Base.allow_forgery_protection = false
     DatabaseCleaner.clean
     sign_in user
