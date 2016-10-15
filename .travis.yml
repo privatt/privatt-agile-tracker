@@ -6,7 +6,7 @@ sudo: required
 cache:
   bundler: true
   directories:
-    - $HOME/.nvm/versions/node/v6.7.0/
+    - $HOME/.nvm/versions/node
 
 rvm:
   - 2.2.5
