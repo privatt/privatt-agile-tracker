@@ -1,8 +1,20 @@
 language: ruby
-cache: bundler
+
+# This is going to enable build on VMs instead of containers
 sudo: required
+
+cache:
+  bundler: true
+  directories:
+    - $HOME/.nvm/versions/node/v6.7.0/
+
+rvm:
+  - 2.2.5
+  - 2.3.1
+
 env:
   - "DB=postgresql"
+
 before_install:
   - nvm install v6.7.0
   - node -v
@@ -10,11 +22,10 @@ before_install:
   - npm install -g phantomjs-prebuilt
   - phantomjs -v
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
+
 before_script:
   - phantomjs -v
   - "bundle exec rake --trace fulcrum:setup db:setup"
-rvm:
-  - 2.2.5
-  - 2.3.1
+
 script:
   - "bundle exec rake travis"
