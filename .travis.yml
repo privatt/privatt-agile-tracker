@@ -2,7 +2,7 @@ language: ruby
 
 # This is going to enable build on VMs instead of containers
 sudo: required
-distro: trusty
+dist: trusty
 
 cache:
   bundler: true
