@@ -4,8 +4,11 @@ sudo: required
 env:
   - "DB=postgresql"
 before_install:
-  - "npm install -g phantomjs-prebuilt"
-  - "phantomjs -v"
+  - nvm install v6.7.0
+  - node -v
+  - npm -v
+  - npm install -g phantomjs-prebuilt
+  - phantomjs -v
   - "/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16"
 before_script:
   - phantomjs -v
