@@ -60,6 +60,8 @@ To execute the tests on a server without GUI:
 
     # Execute the tests
     bundle exec rake spec && bundle exec rake --trace spec:javascripts
+    OR
+    bundle exec rake travis
 
 Colophon
 --------
