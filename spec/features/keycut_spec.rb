@@ -5,6 +5,7 @@ describe "Keycuts" do
   self.use_transactional_fixtures = false
 
   before(:each) do
+    Capybara.default_max_wait_time = 10
     ActionController::Base.allow_forgery_protection = false
     DatabaseCleaner.clean
     sign_in user
@@ -43,8 +44,9 @@ describe "Keycuts" do
       page.should have_css('.story.feature.unscheduled.unestimated.editing')
     end
 
-    it 'saves currently open story (<ctl> + s)', :js => true do
-      click_on 'Add story'
+    it 'saves currently open story (<ctl> + s)', js: true, driver: :selenium do
+      click_on '+ Add story'
+
       within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
       end

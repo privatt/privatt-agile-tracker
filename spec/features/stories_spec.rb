@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "Stories" do
 
   before(:each) do
+    Capybara.default_max_wait_time = 5
     sign_in user
   end
 
@@ -17,7 +18,6 @@ describe "Stories" do
   end
 
   describe "full story life cycle" do
-
     before do
       project
     end
@@ -25,7 +25,7 @@ describe "Stories" do
     it "steps through the full story life cycle", :js => true do
       visit project_path(project)
 
-      click_on 'Add story'
+      click_on '+ Add story'
 
       within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
@@ -45,9 +45,7 @@ describe "Stories" do
       end
 
       find('#in_progress .story.accepted .story-title').should have_content('New story')
-
     end
-
   end
 
   describe "delete a story" do
