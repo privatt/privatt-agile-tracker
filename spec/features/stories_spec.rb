@@ -3,6 +3,7 @@ require 'rails_helper'
 describe "Stories" do
 
   before(:each) do
+    Capybara.default_max_wait_time = 5
     sign_in user
   end
 
