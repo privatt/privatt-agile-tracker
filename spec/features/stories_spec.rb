@@ -17,7 +17,6 @@ describe "Stories" do
   end
 
   describe "full story life cycle" do
-
     before do
       project
     end
@@ -40,15 +39,12 @@ describe "Stories" do
 
       within('#in_progress .story') do
         click_on 'finish'
-        sleep(1.second)
         click_on 'deliver'
         click_on 'accept'
       end
 
       find('#in_progress .story.accepted .story-title').should have_content('New story')
-
     end
-
   end
 
   describe "delete a story" do
