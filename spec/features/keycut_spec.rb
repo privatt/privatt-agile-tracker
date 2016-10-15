@@ -43,7 +43,7 @@ describe "Keycuts" do
       page.should have_css('.story.feature.unscheduled.unestimated.editing')
     end
 
-    it 'saves currently open story (<ctl> + s)', :js => true do
+    it 'saves currently open story (<ctl> + s)', :js => true, driver: :selenium do
       click_on 'Add story'
       within('#chilly_bin') do
         fill_in 'title', :with => 'New story'
