@@ -23,12 +23,10 @@ before_install:
   - npm install -g phantomjs-prebuilt
   - phantomjs -v
 
-after_install:
+before_script:
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - bundle exec rake fulcrum:setup db:setup
   - bundle exec rails generate symmetric_encryption:new_keys test
-
-before_script:
   - phantomjs -v
   - "export DISPLAY=:99.0"
   - "sh -e /etc/init.d/xvfb start"
