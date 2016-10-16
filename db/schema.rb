@@ -83,8 +83,8 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "initials"
+    t.string   "encrypted_name"
+    t.string   "encrypted_initials"
     t.boolean  "email_delivery",         default: true
     t.boolean  "email_acceptance",       default: true
     t.boolean  "email_rejection",        default: true

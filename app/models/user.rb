@@ -1,5 +1,9 @@
 class User < ActiveRecord::Base
 
+  # Encrypted Attributes
+  attr_encrypted :name, random_iv: true
+  attr_encrypted :initials, random_iv: true
+
   # FIXME - DRY up, repeated in Story model
   JSON_ATTRIBUTES = ["id", "name", "initials", "email"]
 
@@ -48,6 +52,10 @@ class User < ActiveRecord::Base
   end
 
   def as_json(options = {})
-    super(:only => JSON_ATTRIBUTES)
+    json = super(:only => JSON_ATTRIBUTES)
+    user = json["user"]
+    user = user.reverse_merge("name" => self.name, "initials" => self.initials)
+    json["user"] = user
+    json
   end
 end
