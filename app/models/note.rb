@@ -1,4 +1,14 @@
 class Note < ActiveRecord::Base
+  # Encrypted Attributes
+  attr_encrypted :note, random_iv: true
+
+  JSON_ATTRIBUTES = [
+    "created_at", "errors", "id", "note", "story_id", "updated_at", "user_id"
+  ]
+  JSON_METHODS = [
+    "errors"
+  ]
+
   belongs_to :user
   belongs_to :story
 
@@ -22,7 +32,11 @@ class Note < ActiveRecord::Base
 
   # Defines the attributes and methods that are included when calling to_json
   def as_json(options = {})
-    super(:methods => ["errors"])
+   json = super(:only => JSON_ATTRIBUTES, :methods => JSON_METHODS)
+   note = json["note"]
+   note = note.reverse_merge("note" => self.note)
+   json["note"] = note
+   json
   end
 
   def to_s

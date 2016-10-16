@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "notes", force: true do |t|
-    t.text     "note"
+    t.text     "encrypted_note"
     t.uuid     "user_id"
     t.uuid     "story_id"
     t.datetime "created_at"
