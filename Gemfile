@@ -23,11 +23,11 @@ gem 'therubyracer', platforms: :ruby
 
 group :development do
   gem 'letter_opener'
-  gem 'byebug'
 end
 
 group :development, :test do
   gem 'pry'
+  gem 'byebug'
   gem 'rspec-rails', '3.4.2'
   gem 'rspec-its', '1.2.0'
   gem 'rspec-activemodel-mocks', '1.0.3'
