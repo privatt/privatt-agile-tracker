@@ -31,6 +31,7 @@ GEM
     arel (5.0.1.20140414130214)
     bcrypt (3.1.10)
     builder (3.2.2)
+    byebug (9.0.6)
     capybara (2.10.1)
       addressable
       mime-types (>= 1.16)
@@ -219,6 +220,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  byebug
   capybara (= 2.10.1)
   compass-rails
   configuration

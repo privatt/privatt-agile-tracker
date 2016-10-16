@@ -23,6 +23,7 @@ gem 'therubyracer', platforms: :ruby
 
 group :development do
   gem 'letter_opener'
+  gem 'byebug'
 end
 
 group :development, :test do
