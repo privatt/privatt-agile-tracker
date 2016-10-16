@@ -15,6 +15,9 @@ gem 'jquery-ui-rails'
 
 gem 'pg'
 
+# Symmetric Encryption using OpenSSL
+gem 'symmetric-encryption', '3.8.3'
+
 # For assets compilation and migration on remote servers
 gem 'therubyracer', platforms: :ruby
 
