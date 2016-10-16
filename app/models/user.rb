@@ -1,6 +1,8 @@
 class User < ActiveRecord::Base
 
   # Encrypted Attributes
+  attr_encrypted :current_sign_in_ip, random_iv: true
+  attr_encrypted :last_sign_in_ip, random_iv: true
   attr_encrypted :name, random_iv: true
   attr_encrypted :initials, random_iv: true
 
