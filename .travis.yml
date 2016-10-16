@@ -23,6 +23,10 @@ before_install:
   - npm install -g phantomjs-prebuilt
   - phantomjs -v
 
+install:
+  - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
+  - bundle exec rails generate symmetric_encryption:new_keys test
+
 before_script:
   - phantomjs -v
   - "export DISPLAY=:99.0"
