@@ -3,6 +3,7 @@ class Story < ActiveRecord::Base
   # Encrypted Attributes
   attr_encrypted :title, random_iv: true
   attr_encrypted :description, random_iv: true
+  attr_encrypted :labels, random_iv: true
 
   JSON_ATTRIBUTES = [
     "title", "accepted_at", "created_at", "updated_at", "description",
@@ -187,9 +188,15 @@ class Story < ActiveRecord::Base
   def as_json(options = {})
     json = super(:only => JSON_ATTRIBUTES, :methods => JSON_METHODS)
     story = json["story"]
+
+    # This code is necessary because the fields are encrypted in the database
+    # and we need to decrypt them before sending them.
     story = story.reverse_merge(
-      "title" => self.title,
-      "description" => self.description)
+      "title"       => self.title,
+      "description" => self.description,
+      "labels"      => self.labels
+    )
+
     json["story"] = story
     json
   end

@@ -61,7 +61,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "position"
-    t.string   "labels"
+    t.string   "encrypted_labels"
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
