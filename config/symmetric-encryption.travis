@@ -6,7 +6,7 @@
 # can be placed directly in the source code.
 # And therefore no RSA private key is required
 
-development:         &development_defaults
+test:
   # Since the key to encrypt and decrypt with must NOT be stored along with the
   # source code, we only hold a RSA key that is used to unlock the file
   # containing the actual symmetric encryption key
@@ -44,57 +44,8 @@ development:         &development_defaults
     -
       # Filename containing Symmetric Encryption Key encrypted using the
       # RSA public key derived from the private key above
-      key_filename:      keys/privatt-agile-tracker_dev.key
-      iv_filename:       keys/privatt-agile-tracker_dev.iv
-      cipher_name:       aes-256-cbc
-      encoding:          :base64strict
-      version:           1
-      always_add_header: true
-
-test:
-  <<: *development_defaults
-
-production:
-  # Since the key to encrypt and decrypt with must NOT be stored along with the
-  # source code, we only hold a RSA key that is used to unlock the file
-  # containing the actual symmetric encryption key
-  private_rsa_key: |
-    -----BEGIN RSA PRIVATE KEY-----
-    MIIEpAIBAAKCAQEAzTf0UWOd+DmiptCjgDqJX1/0mkH3XMyi/99U0PElbPMdT3e1
-    1ZqWaSe/m6cYg0pcQyOcNV9FLfu9zxu/mjWCTMolhvHvM43uHLeeqG2Fv6MyIHqU
-    ZWrPMPvVSR2AN5BLhDVtxt2Z53CMcSYoN9bZMeKJq19lIzUONiYgE6xGgcjLJB3o
-    XzpGIbqzEulwCEMz7PSqaTaeG/I80nl7Cmfvaww0pLXBalvznswZQh3vLV3KKCwI
-    JklkNLtGAU/Gc0O9fuhCU7DdCmfT3994qmfYIAohT/lSnjqdxV3ribQtyBJsDRqu
-    tJq3zxrkUlyT+C63QW8XU8j4YjcecK2mthn05wIDAQABAoIBAQCiaPgIOYhZXHOn
-    BVOANdNmEbCpLC+x15ngWkTrnwz5bmXx8FGNnOwQiI6RhupVbVIbKGGFs8IyJBsR
-    f2phhpt6XjjY1TtzV43sWD1OGm9RPLx9C8XJhYA3yfYACULhtmatWQNp8RLOITpk
-    icgmePgnDJvbboHCHUkD/aRBLYQXTQAPxzSoqqFhc38IUu2jFBGrwxsa0i9kBhP6
-    YQvfnpwxSE83NOU/v0+5vXGUL4T/sTEKHB4kKpXiTMqTADpog9O/X48hZhh1/Cjz
-    FqVfi0xtXMrckWmqDc58Q7kHgHjpXWAMVcTW/w3/FgRfQABjHWvSM5Zwdnr++ikp
-    3Q9Tf5PRAoGBAPYn9ncJvFen2p/bbCfvjtvKm7UhzmftkLVQ8CR9AvbP0hGuwbL0
-    kaUwvex13oz4GFasym3LJMGy7vF3EbPp7UNnVBr+hI5SziQmqGNj7qLbGOUCvrg8
-    cs3QspP6T/pej+8Q9nqGw76U/AJBweLnEo8OLeQqAVRsWWZPYS4wZGGrAoGBANVs
-    5CpoPdhN1/pcaMnUNPov4zIUFAufq4RTOUnBZUSoWpT/8V6BdKm8qDb1IVu3atxe
-    /qYcl9YFwh5irtu3QmCHVB04LxyZRZDjaxCLvTawA3KRqE4OtCzRRMymobBeGMQw
-    rc7ab2fghCD4Yyz1rYL4q3HT7Ayw2RvInwBVObW1AoGAB9uGto4NAQ9On0O11CCF
-    guaYydNmb1LaB6+pusBy08YWgpH9hOThsVA4/89TZ1SUElA5tf+CENzRW8vdOM0C
-    0d/+g04UlSZ3hhfl0CZke7ZauRS5WdA0KfW7fZXD784M8iisdYTPwsmmsbu/oKqX
-    oRFmzZ25pSRARk/KXlsVGTkCgYB239LqR+uCikEtAsGfASKM45VhNEvB+apX5t72
-    1NBqAHeLnE89e0+Wpyzuh3SQGEZd/k9KCI0NuWFY+VA5swY2q8nPCJc9D6XuwKzG
-    p365cipJaxXafFggymLOtlVC3fZfeFmm6IW6zxPpJVBgH2sIkyczHH3Sx8H1trXR
-    QqcFLQKBgQCJCfjvcZDCIeLiH6777waU0sr/MSflNiLoj+SM9OOv/PpGz6e8bnYT
-    bcru0z/HpORawUWfnk4luVLtq8HOmBx9m5YnQe+JiE/rCpi42Z2UU4au+6v/bes9
-    eDbxqrzN1x1Q17aY6srUzpi9izQZ4IO/OaybZrgu8seimVNaP/fVSg==
-    -----END RSA PRIVATE KEY-----
-
-
-  # List Symmetric Key files in the order of current / latest first
-  ciphers:
-    -
-      # Filename containing Symmetric Encryption Key encrypted using the
-      # RSA public key derived from the private key above
-      key_filename:      /etc/rails/keys/privatt-agile-tracker_production.key
-      iv_filename:       /etc/rails/keys/privatt-agile-tracker_production.iv
+      key_filename:      privatt-agile-tracker_test.key
+      iv_filename:       privatt-agile-tracker_test.iv
       cipher_name:       aes-256-cbc
       encoding:          :base64strict
       version:           1
