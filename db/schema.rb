@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "projects", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "name"
+    t.string   "encrypted_name"
     t.string   "point_scale",         default: "fibonacci"
     t.date     "start_date"
     t.integer  "iteration_start_day", default: 1
