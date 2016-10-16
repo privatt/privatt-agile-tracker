@@ -25,6 +25,7 @@ before_install:
 
 install:
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
+  - bundle install
   - bundle exec rails generate symmetric_encryption:new_keys test
 
 before_script:
