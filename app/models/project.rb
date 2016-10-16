@@ -1,5 +1,7 @@
 class Project < ActiveRecord::Base
 
+  attr_encrypted :name, random_iv: true
+
   JSON_ATTRIBUTES = [
     "id", "iteration_length", "iteration_start_day", "start_date",
     "default_velocity"
