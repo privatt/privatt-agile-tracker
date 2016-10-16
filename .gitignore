@@ -11,3 +11,5 @@ config/deploy.rb
 *.swp
 deploy.sh
 public/assets
+keys/
+config/symmetric-encryption.yml

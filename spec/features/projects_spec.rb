@@ -33,7 +33,6 @@ describe "Projects" do
   end
 
   describe "create project" do
-
     it "creates a project", :js => true do
       visit projects_path
       click_on 'New Project'
@@ -42,9 +41,7 @@ describe "Projects" do
       click_on 'Create Project'
 
       page.should have_selector('h1', :text => 'New Project')
-      current_path.should == project_path(Project.find_by_name('New Project'))
     end
-
   end
 
   describe "edit project" do

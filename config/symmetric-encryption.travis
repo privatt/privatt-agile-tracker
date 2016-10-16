@@ -1,0 +1,52 @@
+#
+# Symmetric Encryption for Ruby
+#
+---
+# For the development and test environments the test symmetric encryption keys
+# can be placed directly in the source code.
+# And therefore no RSA private key is required
+
+test:
+  # Since the key to encrypt and decrypt with must NOT be stored along with the
+  # source code, we only hold a RSA key that is used to unlock the file
+  # containing the actual symmetric encryption key
+  private_rsa_key: |
+    -----BEGIN RSA PRIVATE KEY-----
+    MIIEowIBAAKCAQEArOR+SxdBzu62YN7Uz5wqLvGKpd7zKLK3cRd7RATgxrcxBofy
+    rg0uD1FLYaC6AqSZyskWqUpQxQODFL6x22Mzp7Do4tcWloWzMJH51LcRk1kdQsJs
+    aH5HfqeL2k0bxn6tsyfG1KCj/95h9CHVOYYr2qVI6pyKRQnG4TxP07RavrjCTn5K
+    f0cBiHb00YpWEXfgPOFd9r3sqLBrkgF+Lo29pDQuEwDYji2cjW226ooadaBChrxy
+    S6eZf7WoQPBtF1+nvMPwzH0YYJ+CkkbV4I7WZ0cmajwXYaF9hhNnQo6zJSf0bIGZ
+    Y+m1b8sgkdlC7qGzJczb9X7dOLELSrjLMBtkZwIDAQABAoIBAC73RyOI5tSa3ipE
+    fhUDvCXScbKLdQyKN/Ddyxt4I8N3gjbe+Vq0s91vXQXhToZnRmvi4mgMixJp2NLq
+    1o/dS+vyz+DHQxiSq1G3ZeGV9Y1MePlorWBZZXyPcRtVNQVf5jmzxXx/Qu2/8GYM
+    RssAmqsjmUI6UgldFYycAKdm5/vE7Ipqatur2+JP7gPFyjTC/x7FX5sBkdeYtaBk
+    7yk9eNgxNFYeF0uLvMps3BEfzNCYXO+6c6zAojyL/CYhn1+jzF+kag2g88GhJUbK
+    ObPz4j3lTFLLZghFl9ve6hR5QF/gz7UZWOY1/HFdvR6gV6wEmpGaw/sLL8qT+kG8
+    cscCuBkCgYEA2lcJHJHV4YO34TW5nIiPWl67wbqCqXEW1nyb/VYKNcdWFfJY7Y12
+    B0Y/GylGeoTv1NRKXJ17nEWQQVuEP2K0TYJxNuDgxyyY9E4jBvdZbpZTaoAIf5Jr
+    uiwscXTiGlISX4Mwce208Ci3hHzyAn0SE3vbdyYRZoKrDANkhGrWrdUCgYEAyrax
+    T5puuuYTz5VC08FYZdyzrOGjM1NJf8kw4V+dis0QTNpZEZanGWjr8AFXcNOyhTEn
+    MJ/yK0DuGjVGmO4+J1FVZA8kfIjz8ysyzJCFbNotD/ZXh7WBMlOFWicutK0MLvJr
+    I1sEFhX/FUDXOoOWzheylvRlJ5kNRo/6q3bdG0sCgYEA0dMUoY0Q0tEnc9mSj3i4
+    8urZWvqnOLjCbst/iP0XgMkY1Kx6g4gPpjv+x1ZqMbHxXUHKWKjLMsmzMOwG8ncj
+    uN0jec6wlRgpwZYZmUc5fcofTdjO0fJfbqGm8D2YUB0RJRLJCqOa37Txb/Q3Cucw
+    6OJ9bUp7LF1kjX3xKkQWHSUCgYAUFjJPrv/V6UKBSUsL7Jaz0UDEmr8vMMuRq//5
+    9R2JSXSaCPDWe1UngWwPpjJh7bg81ngJq2+1tYNieXD7anAiOT764T0+UdvKdrdb
+    6d4uwRfCAyj9O5EHyZrnKgbIxHT2mfLf1/75qUhTdM9e7vcciOCbcLAtUk8sdMvj
+    /a0/LQKBgADFR7NfvjkKRBf94sU6Z9tDEYCU8QTtqsw29N45WGLh8DD0eTYfmGSA
+    NwM+Lipija55ymFSdzaofQAJFauaMsBjTOD/Cfoc8T0KJW/eHtjkeo7jH8Uu+agl
+    LXH8riY07r1tTWIrDNhEn8eCNFaLxcyOfVSEtEC5hKT7F0vLvNxf
+    -----END RSA PRIVATE KEY-----
+
+  # List Symmetric Key files in the order of current / latest first
+  ciphers:
+    -
+      # Filename containing Symmetric Encryption Key encrypted using the
+      # RSA public key derived from the private key above
+      key_filename:      privatt-agile-tracker_test.key
+      iv_filename:       privatt-agile-tracker_test.iv
+      cipher_name:       aes-256-cbc
+      encoding:          :base64strict
+      version:           1
+      always_add_header: true

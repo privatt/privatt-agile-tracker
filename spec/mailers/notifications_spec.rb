@@ -57,17 +57,42 @@ describe Notifications do
   end
 
   describe "#new_note" do
+    let(:notify_users) do
+      [FactoryGirl.create(:user, :email => 'foo@example.com', :password => 'password')]
+    end
 
-    let(:notify_users)  { [mock_model(User, :email => 'foo@example.com')] }
-    let(:user)          { mock_model(User, :name => 'Note User') }
-    let(:note)          { mock_model(Note, :story => story, :user => user) }
+    let(:user) do
+      FactoryGirl.create :user, :email => 'user_note@example.com',
+                                :password => 'password',
+                                :name => 'Note User'
+    end
+
+    let(:note_project) do
+      FactoryGirl.create :project,  :name => 'Test Project',
+                                    :users => [user]
+    end
+
+    let(:note_story) do
+      FactoryGirl.create :story,  :title => 'Test Story',
+                                  :state => 'started',
+                                  :project => note_project,
+                                  :requested_by => user
+    end
+
+    let(:note) do
+      FactoryGirl.create :note, :user => user,
+                                :story => note_story,
+                                :note => 'Test Note Content'
+    end
 
     subject { Notifications.new_note(note, notify_users) }
 
-    its(:subject) { should == "[Test Project] New comment on 'Test story'" }
+    its(:subject) { should == "[Test Project] New comment on 'Test Story'" }
     its(:to)      { ['foo@example.com'] }
     its(:from)    { [user.email] }
 
     specify { subject.body.encoded.should match("Note User added the following comment to the story") }
+
+    DatabaseCleaner.clean
   end
 end

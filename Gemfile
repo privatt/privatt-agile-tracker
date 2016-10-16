@@ -15,6 +15,9 @@ gem 'jquery-ui-rails'
 
 gem 'pg'
 
+# Symmetric Encryption using OpenSSL
+gem 'symmetric-encryption', '3.8.3'
+
 # For assets compilation and migration on remote servers
 gem 'therubyracer', platforms: :ruby
 
@@ -24,6 +27,7 @@ end
 
 group :development, :test do
   gem 'pry'
+  gem 'byebug'
   gem 'rspec-rails', '3.4.2'
   gem 'rspec-its', '1.2.0'
   gem 'rspec-activemodel-mocks', '1.0.3'

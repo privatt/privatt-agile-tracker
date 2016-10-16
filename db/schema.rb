@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "notes", force: true do |t|
-    t.text     "note"
+    t.text     "encrypted_note"
     t.uuid     "user_id"
     t.uuid     "story_id"
     t.datetime "created_at"
@@ -33,7 +33,7 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "projects", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "name"
+    t.string   "encrypted_name"
     t.string   "point_scale",         default: "fibonacci"
     t.date     "start_date"
     t.integer  "iteration_start_day", default: 1
@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "stories", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "title"
-    t.text     "description"
+    t.string   "encrypted_title"
+    t.text     "encrypted_description"
     t.integer  "estimate"
-    t.string   "story_type",      default: "feature"
-    t.string   "state",           default: "unstarted"
+    t.string   "story_type",            default: "feature"
+    t.string   "state",                 default: "unstarted"
     t.date     "accepted_at"
     t.uuid     "requested_by_id"
     t.uuid     "owned_by_id"
@@ -61,21 +61,21 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.decimal  "position"
-    t.string   "labels"
+    t.string   "encrypted_labels"
   end
 
   create_table "users", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "email",                  default: "",   null: false
-    t.string   "encrypted_password",     default: "",   null: false
+    t.string   "email",                        default: "",   null: false
+    t.string   "encrypted_password",           default: "",   null: false
     t.string   "reset_password_token"
     t.datetime "reset_password_sent_at"
     t.string   "remember_token"
     t.datetime "remember_created_at"
-    t.integer  "sign_in_count",          default: 0
+    t.integer  "sign_in_count",                default: 0
     t.datetime "current_sign_in_at"
     t.datetime "last_sign_in_at"
-    t.string   "current_sign_in_ip"
-    t.string   "last_sign_in_ip"
+    t.string   "encrypted_current_sign_in_ip"
+    t.string   "encrypted_last_sign_in_ip"
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
@@ -83,11 +83,11 @@ ActiveRecord::Schema.define(version: 20120504152649) do
     t.string   "password_salt"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.string   "name"
-    t.string   "initials"
-    t.boolean  "email_delivery",         default: true
-    t.boolean  "email_acceptance",       default: true
-    t.boolean  "email_rejection",        default: true
+    t.string   "encrypted_name"
+    t.string   "encrypted_initials"
+    t.boolean  "email_delivery",               default: true
+    t.boolean  "email_acceptance",             default: true
+    t.boolean  "email_rejection",              default: true
     t.string   "locale"
   end
 

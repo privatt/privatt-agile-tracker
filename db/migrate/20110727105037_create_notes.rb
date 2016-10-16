@@ -1,7 +1,7 @@
 class CreateNotes < ActiveRecord::Migration
   def self.up
     create_table :notes do |t|
-      t.text :note
+      t.text :encrypted_note
       t.uuid :user_id
       t.uuid :story_id
 

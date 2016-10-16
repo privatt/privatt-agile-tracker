@@ -37,6 +37,10 @@ Installation
     $ gem install bundler
     $ bundle install
 
+    rails generate symmetric_encryption:config keys
+    mkdir keys
+    rails generate symmetric_encryption:new_keys development
+
     # Set up the development database
     $ bundle exec rake fulcrum:setup db:setup
 
