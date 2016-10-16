@@ -1,8 +1,8 @@
 class CreateStories < ActiveRecord::Migration
   def self.up
     create_table :stories, id: :uuid do |t|
-      t.string :title
-      t.text :description
+      t.string :encrypted_title
+      t.text :encrypted_description
       t.integer :estimate
       t.string :story_type, :default => 'feature'
       t.string :state, :default => 'unstarted'

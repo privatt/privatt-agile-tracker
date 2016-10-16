@@ -1,5 +1,9 @@
 class Story < ActiveRecord::Base
 
+  # Encrypted Attributes
+  attr_encrypted :title, random_iv: true
+  attr_encrypted :description, random_iv: true
+
   JSON_ATTRIBUTES = [
     "title", "accepted_at", "created_at", "updated_at", "description",
     "project_id", "story_type", "owned_by_id", "requested_by_id", "estimate",
@@ -181,7 +185,13 @@ class Story < ActiveRecord::Base
   end
 
   def as_json(options = {})
-    super(:only => JSON_ATTRIBUTES, :methods => JSON_METHODS)
+    json = super(:only => JSON_ATTRIBUTES, :methods => JSON_METHODS)
+    story = json["story"]
+    story = story.reverse_merge(
+      "title" => self.title,
+      "description" => self.description)
+    json["story"] = story
+    json
   end
 
   def set_position_to_last

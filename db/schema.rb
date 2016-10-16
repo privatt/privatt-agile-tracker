@@ -49,11 +49,11 @@ ActiveRecord::Schema.define(version: 20120504152649) do
   end
 
   create_table "stories", id: :uuid, default: "uuid_generate_v4()", force: true do |t|
-    t.string   "title"
-    t.text     "description"
+    t.string   "encrypted_title"
+    t.text     "encrypted_description"
     t.integer  "estimate"
-    t.string   "story_type",      default: "feature"
-    t.string   "state",           default: "unstarted"
+    t.string   "story_type",            default: "feature"
+    t.string   "state",                 default: "unstarted"
     t.date     "accepted_at"
     t.uuid     "requested_by_id"
     t.uuid     "owned_by_id"
