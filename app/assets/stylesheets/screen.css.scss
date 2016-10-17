@@ -236,9 +236,40 @@ div.story {
   background-color: #eee;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #fff;
+
+  .edit-title {
+    padding-bottom: 1em;
+    border-bottom: $border;
+
+    .title {
+      padding: 0.5em;
+      border: $border;
+    }
+  }
 }
+
 div.story:hover {
   background-color: #ddd;
+}
+
+div.story-icons {
+  float: left;
+  font-size: 0;
+}
+
+div.story-title {
+  margin-left: 50px;
+}
+
+.unestimated div.story-title {
+  font-style: italic;
+}
+
+div.story-title abbr.initials {
+  color: green;
+  font-weight: bold;
+  margin-left: 0.2em;
+  border: none;
 }
 
 div.story.editing, div.story.editing:hover {
@@ -251,20 +282,6 @@ div.story.feature.accepted,
 div.story.bug.accepted,
 div.story.chore.accepted{
   background-color: adjust-lightness($chameleon-1, 40);
-}
-
-div.story input[type=text],
-div.story textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
-div.story textarea {
-  height: 50px;
-}
-
-div.story-icons {
-  float: left;
-  font-size: 0;
 }
 
 div.story-controls {
@@ -291,19 +308,10 @@ div.story-controls {
   }
 }
 
-div.story-title {
-  margin-left: 50px;
-}
-
-.unestimated div.story-title {
-  font-style: italic;
-}
-
-div.story-title abbr.initials {
-  color: green;
-  font-weight: bold;
-  margin-left: 0.2em;
-  border: none;
+div.story input[type=text],
+div.story textarea {
+  width: 100%;
+  box-sizing: border-box;
 }
 
 #in_progress div.story,
