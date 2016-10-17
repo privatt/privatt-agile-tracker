@@ -231,9 +231,8 @@ div.storycolumn {
 
 /* Story types */
 div.story {
+  box-sizing: border-box;
   padding: 0.7em;
-  background-repeat: no-repeat;
-  background-position: 4px 4px;
   background-color: #eee;
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #fff;
@@ -253,9 +252,11 @@ div.story.bug.accepted,
 div.story.chore.accepted{
   background-color: adjust-lightness($chameleon-1, 40);
 }
+
 div.story input[type=text],
 div.story textarea {
-  width: 99%;
+  width: 100%;
+  box-sizing: border-box;
 }
 div.story textarea {
   height: 50px;
@@ -265,15 +266,39 @@ div.story-icons {
   float: left;
   font-size: 0;
 }
+
 div.story-controls {
-  padding: 10px 0;
+  display: flex;
+  margin-bottom: 1em;
+
+  input[type="button"] {
+    flex: 1 0 auto;
+    padding: 1em 0;
+    background: none;
+    border-left: none;
+    border-top: none;
+    border-right: $border;
+    border-bottom: none;
+  }
+
+  input[type="button"]:last-child {
+    border-right: none;
+  }
+
+  input[type="button"]:hover {
+    cursor: pointer;
+    background-color: adjust-lightness($chameleon-1, 80);
+  }
 }
+
 div.story-title {
   margin-left: 50px;
 }
+
 .unestimated div.story-title {
   font-style: italic;
 }
+
 div.story-title abbr.initials {
   color: green;
   font-weight: bold;
