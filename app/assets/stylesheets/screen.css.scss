@@ -300,6 +300,16 @@ div.story {
   .story-owned-by {
     margin-bottom: 1em;
   }
+
+  .story-labels {
+    border-bottom: $border;
+    padding-bottom: 1em;
+  }
+
+  ul.tagit {
+    border-radius: 0;
+    margin: 0;
+  }
 }
 
 div.story:hover {

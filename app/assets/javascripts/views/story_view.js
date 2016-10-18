@@ -369,6 +369,8 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
 
       this.$el.append(
         this.makeFormControl({
+          divClass: true,
+          divClassName: "story-labels",
           name: "labels",
           label: true,
           control: this.textField("labels")
