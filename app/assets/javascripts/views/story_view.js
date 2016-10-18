@@ -286,15 +286,39 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
       );
 
       this.$el.append(
-        this.makeFormControl({
-          name: "estimate",
-          label: true,
-          control: this.select("estimate", this.model.point_values(), {blank: 'No estimate'})
+        this.makeFormControl(function(div) {
+          $(div).addClass('story-desc');
+          $(div).append(this.label("description", "Description"));
+          $(div).append('<br/>');
+          if(this.model.isNew() || this.model.get('editingDescription')) {
+            $(div).append(this.textArea("description", this.model.escape('description'), {rows: "10"}));
+          } else {
+            var description = this.make('div');
+
+            if (this.model.get('description')) {
+              $(description).addClass('story-description');
+              $(description).html(
+                window.md.makeHtml(this.model.escape('description'))
+              );
+            }
+
+            $(div).append(description);
+
+            $(description).after(
+              this.make('input', {
+                id: 'edit-description',
+                type: 'button',
+                value: I18n.t('edit')
+              })
+            );
+          }
         })
       );
 
       this.$el.append(
         this.makeFormControl({
+          divClass: true,
+          divClassName: "story-type",
           name: "story_type",
           label: true,
           control: this.select("story_type", ["feature", "chore", "bug", "release"])
@@ -303,6 +327,18 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
 
       this.$el.append(
         this.makeFormControl({
+          divClass: true,
+          divClassName: "story-estimate",
+          name: "estimate",
+          label: true,
+          control: this.select("estimate", this.model.point_values(), {blank: 'No estimate'})
+        })
+      );
+
+      this.$el.append(
+        this.makeFormControl({
+          divClass: true,
+          divClassName: "story-state",
           name: "state",
           label: true,
           control: this.select("state", ["unscheduled", "unstarted", "started", "finished", "delivered", "accepted", "rejected"])
@@ -311,6 +347,8 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
 
       this.$el.append(
         this.makeFormControl({
+          divClass: true,
+          divClassName: "story-requested-by",
           name: "requested_by_id",
           label: true,
           control: this.select("requested_by_id",
@@ -320,6 +358,8 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
 
       this.$el.append(
         this.makeFormControl({
+          divClass: true,
+          divClassName: "story-owned-by",
           name: "owned_by_id",
           label: true,
           control: this.select("owned_by_id",
@@ -332,32 +372,6 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
           name: "labels",
           label: true,
           control: this.textField("labels")
-        })
-      );
-
-
-
-      this.$el.append(
-        this.makeFormControl(function(div) {
-          $(div).append(this.label("description", "Description"));
-          $(div).append('<br/>');
-          if(this.model.isNew() || this.model.get('editingDescription')) {
-            $(div).append(this.textArea("description"));
-          } else {
-            var description = this.make('div');
-            $(description).addClass('description');
-            $(description).html(
-              window.md.makeHtml(this.model.escape('description'))
-            );
-            $(div).append(description);
-            $(description).after(
-              this.make('input', {
-                id: 'edit-description',
-                type: 'button',
-                value: I18n.t('edit')
-              })
-            );
-          }
         })
       );
 
@@ -504,10 +518,16 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
       content.call(this, div);
     } else if (typeof content == 'object') {
       var $div = $(div);
+
+      if (content.divClass) {
+        $div.addClass(content.divClassName);
+      }
+
       if (content.label) {
         $div.append(this.label(content.name));
         $div.append('<br/>');
       }
+
       $div.append(content.control);
     }
     return div;
