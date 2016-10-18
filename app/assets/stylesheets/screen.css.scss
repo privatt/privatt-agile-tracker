@@ -237,6 +237,25 @@ div.story {
   border-bottom: 1px solid #ddd;
   border-top: 1px solid #fff;
 
+  input[type=text],
+  textarea,
+  select {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  select {
+    border: $border;
+    background: none;
+    background-color: #fff;
+    height: 30px;
+    padding: 0 0.2em;
+
+    option {
+      font-size: 13px;
+    }
+  }
+
   .edit-title {
     padding-bottom: 1em;
     border-bottom: $border;
@@ -245,6 +264,41 @@ div.story {
       padding: 0.5em;
       border: $border;
     }
+  }
+
+  .story-desc {
+    margin-top: 1em;
+    padding-bottom: 1em;
+    border-bottom: $border;
+  }
+
+  .story-description {
+    margin-top: 0.3em;
+    margin-bottom: 0.5em;
+    background-color: #fff;
+    padding: 0.1em 0.7em;
+
+  }
+
+  .story-type {
+    margin-top: 1em;
+    margin-bottom: 1em;
+  }
+
+  .story-estimate {
+    margin-bottom: 1em;
+  }
+
+  .story-state {
+    margin-bottom: 1em;
+  }
+
+  .story-requested-by {
+    margin-bottom: 1em;
+  }
+
+  .story-owned-by {
+    margin-bottom: 1em;
   }
 }
 
@@ -308,11 +362,7 @@ div.story-controls {
   }
 }
 
-div.story input[type=text],
-div.story textarea {
-  width: 100%;
-  box-sizing: border-box;
-}
+
 
 #in_progress div.story,
 #backlog div.story,
