@@ -427,7 +427,6 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
   renderNotes: function() {
     if (this.model.notes.length > 0) {
       var el = this.$el;
-      el.append('<hr/>');
       el.append('<h3>' + I18n.t('notes') + '</h3>');
       el.append('<div class="notelist"/>');
       this.renderNotesCollection();
