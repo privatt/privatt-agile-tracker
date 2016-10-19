@@ -451,15 +451,25 @@ describe('Fulcrum.StoryView', function() {
       this.view.model.isNew = sinon.stub().returns(true);
       this.view.render();
       expect(this.view.$('textarea[name="description"]').length).toEqual(1);
-      expect(this.view.$('div.description').length).toEqual(0);
+      expect(this.view.$('div.story-description').length).toEqual(0);
       expect(this.view.$('input#edit-description').length).toEqual(0);
     });
 
-    it("isn't text area when story isn't new", function() {
+    it("isn't text area when story isn't new and have description", function() {
       this.view.model.isNew = sinon.stub().returns(false);
       this.view.render();
+      this.view.model.set('description', "This is a description");
       expect(this.view.$('textarea[name="description"]').length).toEqual(0);
-      expect(this.view.$('div.description').length).toEqual(1);
+      expect(this.view.$('div.story-description').length).toEqual(1);
+      expect(this.view.$('input#edit-description').length).toEqual(1);
+    });
+
+    it("should not display textarea and div when no description", function() {
+      this.view.model.isNew = sinon.stub().returns(false);
+      this.view.render();
+      this.view.model.set('description', "");
+      expect(this.view.$('textarea[name="description"]').length).toEqual(0);
+      expect(this.view.$('div.story-description').length).toEqual(0);
       expect(this.view.$('input#edit-description').length).toEqual(1);
     });
 

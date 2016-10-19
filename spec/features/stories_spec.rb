@@ -20,23 +20,33 @@ describe "Stories" do
   describe "full story life cycle" do
     before do
       project
+      visit project_path(project)
     end
 
-    it "steps through the full story life cycle", :js => true do
-      visit project_path(project)
-
+    it "should add a new story", js: true do
       click_on '+ Add story'
 
-      within('#chilly_bin') do
-        fill_in 'title', :with => 'New story'
+      within('#chilly_bin .story .edit-title') do
+        fill_in 'title', with: 'New story'
+      end
+
+      within('#chilly_bin .story') do
         click_on 'Save'
       end
 
-      # Estimate the story
+      find('#chilly_bin').should have_content('New story')
+
       within('#chilly_bin .story') do
         click_on '1'
+      end
+
+      find('#chilly_bin .story').should have_content('1')
+
+      within('#chilly_bin .story') do
         click_on 'start'
       end
+
+      find('#in_progress').should have_content('New story')
 
       within('#in_progress .story') do
         click_on 'finish'
