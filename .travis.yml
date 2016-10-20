@@ -22,6 +22,7 @@ before_install:
   - npm -v
   - npm install -g phantomjs-prebuilt
   - phantomjs -v
+  - firefox -v
 
 before_script:
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
