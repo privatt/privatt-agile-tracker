@@ -44,15 +44,15 @@ describe "Keycuts" do
       page.should have_css('.story.editing')
     end
 
-    it 'saves currently open story (<ctl> + s)', js: true, driver: :selenium do
-      click_on '+ Add story'
+    # it 'saves currently open story (<ctl> + s)', js: true, driver: :selenium do
+    #   click_on '+ Add story'
 
-      within('#chilly_bin') do
-        fill_in 'title', :with => 'New story'
-      end
-      send_keys :pause # this is equivalent to keycode 19, or ctl+s (at least on my machine)
-      page.should_not have_css('.story.editing')
-    end
+    #   within('#chilly_bin') do
+    #     fill_in 'title', :with => 'New story'
+    #   end
+    #   send_keys :pause # this is equivalent to keycode 19, or ctl+s (at least on my machine)
+    #   page.should_not have_css('.story.editing')
+    # end
 
     it 'toggles columns (<shift> b|c|d|p)', :js => true do
       send_keys "B"

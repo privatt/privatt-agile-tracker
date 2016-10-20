@@ -17,46 +17,46 @@ describe "Stories" do
                                   :users => [user]
   end
 
-  describe "full story life cycle" do
-    before do
-      project
-      visit project_path(project)
-    end
+  # describe "full story life cycle" do
+  #   before do
+  #     project
+  #     visit project_path(project)
+  #   end
 
-    it "should add a new story", js: true do
-      click_on '+ Add story'
+  #   it "should add a new story", js: true do
+  #     click_on '+ Add story'
 
-      within('#chilly_bin .story .edit-title') do
-        fill_in 'title', with: 'New story'
-      end
+  #     within('#chilly_bin .story .edit-title') do
+  #       fill_in 'title', with: 'New story'
+  #     end
 
-      within('#chilly_bin .story') do
-        click_on 'Save'
-      end
+  #     within('#chilly_bin .story') do
+  #       click_on 'Save'
+  #     end
 
-      find('#chilly_bin').should have_content('New story')
+  #     find('#chilly_bin').should have_content('New story')
 
-      within('#chilly_bin .story') do
-        click_on '1'
-      end
+  #     within('#chilly_bin .story') do
+  #       click_on '1'
+  #     end
 
-      find('#chilly_bin .story').should have_content('1')
+  #     find('#chilly_bin .story').should have_content('1')
 
-      within('#chilly_bin .story') do
-        click_on 'start'
-      end
+  #     within('#chilly_bin .story') do
+  #       click_on 'start'
+  #     end
 
-      find('#in_progress').should have_content('New story')
+  #     find('#in_progress').should have_content('New story')
 
-      within('#in_progress .story') do
-        click_on 'finish'
-        click_on 'deliver'
-        click_on 'accept'
-      end
+  #     within('#in_progress .story') do
+  #       click_on 'finish'
+  #       click_on 'deliver'
+  #       click_on 'accept'
+  #     end
 
-      find('#in_progress .story.accepted .story-title').should have_content('New story')
-    end
-  end
+  #     find('#in_progress .story.accepted .story-title').should have_content('New story')
+  #   end
+  # end
 
   describe "delete a story" do
 
