@@ -16,13 +16,15 @@ rvm:
 env:
   - "DB=postgresql"
 
+addons:
+  firefox: 45
+
 before_install:
   - nvm install v6.7.0
   - node -v
   - npm -v
   - npm install -g phantomjs-prebuilt
   - phantomjs -v
-  - sudo apt-get install firefox=45.0.2+build1-0ubuntu1 -y
   - firefox -v
 
 before_script:
