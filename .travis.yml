@@ -12,6 +12,7 @@ cache:
 rvm:
   - 2.2.5
   - 2.3.1
+  - 2.4.4
 
 env:
   - "DB=postgresql"
