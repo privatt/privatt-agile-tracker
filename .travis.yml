@@ -29,7 +29,6 @@ before_install:
 
 before_script:
   - cd src/ruby
-  - bundle update --bundler
   - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
