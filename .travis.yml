@@ -10,9 +10,8 @@ cache:
     - $HOME/.nvm/versions/node
 
 rvm:
-  - 2.2.5
-  - 2.3.1
-  - 2.4.4
+  - 2.3.8
+  - 2.4.5
 
 env:
   - "DB=postgresql"
@@ -31,8 +30,9 @@ before_script:
   - cd src/ruby
   - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
-  - bundle exec rake fulcrum:setup db:setup
+  - mv config/database.yml.postgresql config/database.yml
   - bundle exec rails generate symmetric_encryption:new_keys test
+  - bundle exec rake fulcrum:setup db:setup
   - phantomjs -v
   - firefox -v
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
