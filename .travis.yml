@@ -29,6 +29,7 @@ before_install:
 
 before_script:
   - cd src/ruby
+  - gem uninstall bundler && gem install bundler -v 1.17.3
   - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
