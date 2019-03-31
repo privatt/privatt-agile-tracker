@@ -66,7 +66,7 @@ GEM
     database_cleaner (1.4.1)
     descendants_tracker (0.0.4)
       thread_safe (~> 0.3, >= 0.3.1)
-    devise (3.4.1)
+    devise (3.5.10)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
       railties (>= 3.2.6, < 5)
@@ -253,7 +253,7 @@ DEPENDENCIES
   compass-rails
   configuration
   database_cleaner
-  devise (= 3.4.1)
+  devise (= 3.5.10)
   ejs
   factory_girl_rails (= 4.7.0)
   jasmine-rails (= 0.14.1)
