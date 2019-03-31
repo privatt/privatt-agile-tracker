@@ -12,6 +12,7 @@ cache:
 rvm:
   - 2.3.8
   - 2.4.5
+  - 2.5.1
 
 env:
   - "DB=postgresql"
@@ -28,6 +29,7 @@ before_install:
 
 before_script:
   - cd src/ruby
+  - gem install bundler -v 1.17.3
   - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
