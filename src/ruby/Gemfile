@@ -12,6 +12,7 @@ gem 'rails-i18n'
 gem 'configuration'
 gem 'rails-observers', '~> 0.1.2'
 gem 'jquery-ui-rails'
+gem 'rubyzip', '1.2.2'
 
 gem 'pg'
 
