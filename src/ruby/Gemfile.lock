@@ -118,7 +118,7 @@ GEM
     mini_portile2 (2.4.0)
     minitest (5.11.3)
     multi_json (1.13.1)
-    nokogiri (1.10.2)
+    nokogiri (1.10.4)
       mini_portile2 (~> 2.4.0)
     orm_adapter (0.5.0)
     pg (0.18.1)
@@ -260,6 +260,7 @@ DEPENDENCIES
   jquery-rails (= 3.1.5)
   jquery-ui-rails
   letter_opener
+  nokogiri (= 1.10.4)
   pg
   poltergeist (= 1.11.0)
   pry
