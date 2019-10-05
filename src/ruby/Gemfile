@@ -6,7 +6,7 @@ gem 'uglifier', '4.1.20'
 gem 'jquery-rails', '3.1.5'
 gem 'ejs'
 gem 'compass-rails'
-gem 'devise', '4.6.2'
+gem 'devise', '4.7.1'
 gem 'transitions', '0.1.9', require: ['transitions', 'active_record/transitions']
 gem 'rails-i18n'
 gem 'configuration'
