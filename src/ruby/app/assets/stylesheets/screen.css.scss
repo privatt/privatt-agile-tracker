@@ -5,39 +5,6 @@
 @import 'bootstrap';
 @import 'icons';
 
-$darkgrey:   #6a7176;           // Header color
-$orange:     rgb(250,182,155);  // Estimate gauge color
-
-// Tango icon theme pallette
-// http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines
-$butter-1:      #fce94f;
-$butter-2:      #edd400;
-$butter-3:      #c4a000;
-$orange-1:      #fcaf3e;
-$orange-2:      #f57900;
-$orange-3:      #ce5c00;
-$chocolate-1:   #e9b96e;
-$chocolate-2:   #c17d11;
-$chocolate-3:   #8f5902;
-$chameleon-1:   #8ae234;
-$chameleon-2:   #73d216;
-$chameleon-3:   #4e9a06;
-$sky-blue-1:    #729fcf;
-$sky-blue-2:    #3465a4;
-$sky-blue-3:    #204a87;
-$plum-1:        #ad7fa8;
-$plum-2:        #75507b;
-$plum-3:        #5c3566;
-$scarlet-red-1: #ef2929;
-$scarlet-red-2: #cc0000;
-$scarlet-red-3: #a40000;
-$aluminium-1:   #eeeeec;
-$aluminium-2:   #d3d7cf;
-$aluminium-3:   #babdb6;
-$aluminium-4:   #888a85;
-$aluminium-5:   #555753;
-$aluminium-6:   #2e3436;
-
 body {
   margin: 0;
   padding: 0;
@@ -48,9 +15,8 @@ a img {
 }
 
 #header {
-  background: $darkgrey;
-  border-bottom: 1px solid $darkgrey*0.7;
-  @include box-shadow(0 1px 2px #aaaaaa);
+  background-color: $background-color;
+  border-bottom: $border;
   position: relative;
   z-index: 900;
 }
@@ -59,42 +25,57 @@ ul#primary-nav {
   text-align: right;
   margin: 0;
   padding: 1em;
-  color: white;
+  color: $font-color;
 }
+
 ul#primary-nav li {
   padding: 0 0.5em;
   display: inline;
 }
+
 ul#primary-nav li a {
-  color: white;
+  color: $font-color;
   text-decoration: none;
   padding-top: 1.2em;
   padding-bottom: 1.2em;
 }
+
 ul#primary-nav li.root {
   float: left;
   font-size: large;
 }
+
 ul#primary-nav li.secondary {
   position: relative;
 }
+
 ul#primary-nav li.secondary ul {
   visibility: hidden;
 }
+
 ul#primary-nav li.secondary:hover ul {
   visibility: visible;
 }
+
 ul#primary-nav li.secondary ul {
-  padding: 0.3em;
   position: absolute;
   left: 0;
   top: 2.3em;
-  background-color: #333;
+  background-color: $background-color;
+  border: $border;
+  list-style: none;
+  padding: 0;
 }
+
 ul#primary-nav li.secondary ul li {
   white-space: nowrap;
   text-align: left;
   display: block;
+  border-bottom: $border;
+}
+
+ul#primary-nav li.secondary ul li:last-child {
+  border-bottom: none;
 }
 
 ul#primary-nav li.secondary ul li a {
@@ -103,18 +84,17 @@ ul#primary-nav li.secondary ul li a {
 }
 
 ul#primary-nav li.secondary ul li:hover {
-  background-color: #444;
+  background-color: $background-color-hover;
 }
 
 #title_bar {
-  background: #efefef;
-  @include background(linear-gradient(top, #efefef, #dfe1e2));
-  border-bottom: 1px solid #ededed;
+  background-color: $background-color;
+  border-bottom: $border;
   padding: 5px 10px 3px 10px;
   font-size: 1.0em;
   line-height: 140%;
   margin-bottom: 0.5em;
-  color: #5e6469;
+  color: $font-color;
   position: relative;
   margin: 0;
   padding: 10px 1em;
@@ -181,8 +161,8 @@ html.stories, html.stories body, html.stories div#main {
 #column-toggles a {
   margin: 0 0.2em;
   padding: 5px 8px;
-  color: white;
-  background-color: $darkgrey;
+  color: $font-color;
+  background-color: $background-color;
   text-decoration: none;
   text-shadow: none;
 }
@@ -201,7 +181,8 @@ table.stories {
 
 table.stories td {
   vertical-align: top;
-  background-color: #ccc;
+  background-color: $background-color;
+  border: $border;
 }
 
 div.storycolumn {
@@ -212,19 +193,18 @@ div.storycolumn {
 /* Story columns headers */
 .column_header {
   text-align: left;
-  background: $darkgrey;
-  @include background(linear-gradient(top, $darkgrey, $darkgrey*0.75));
-  color: #eee;
+  border-bottom: $border;
   padding: 0.2em 0.2em 0.2em 1em;
   text-transform:capitalize;
+
   a.toggle-column{
-    color: #eee;
     text-decoration: none;
     float: right;
     padding: 0px 5px 1px;
     cursor: pointer;
+
     &:hover{
-      color:$aluminium-3;
+      color: $aluminium-3;
     }
   }
 }
@@ -233,9 +213,8 @@ div.storycolumn {
 div.story {
   box-sizing: border-box;
   padding: 0.7em;
-  background-color: #eee;
-  border-bottom: 1px solid #ddd;
-  border-top: 1px solid #fff;
+  background-color: $background-color;
+  border-bottom: $border;
 
   input[type=text],
   textarea,
@@ -246,8 +225,6 @@ div.story {
 
   select {
     border: $border;
-    background: none;
-    background-color: #fff;
     height: 30px;
     padding: 0 0.2em;
 
@@ -275,9 +252,7 @@ div.story {
   .story-description {
     margin-top: 0.3em;
     margin-bottom: 0.5em;
-    background-color: #fff;
     padding: 0.1em 0.7em;
-
   }
 
   .story-type {
@@ -313,7 +288,7 @@ div.story {
 }
 
 div.story:hover {
-  background-color: #ddd;
+  background-color: $background-color-hover;
 }
 
 div.story-icons {
@@ -330,22 +305,9 @@ div.story-title {
 }
 
 div.story-title abbr.initials {
-  color: green;
   font-weight: bold;
   margin-left: 0.2em;
   border: none;
-}
-
-div.story.editing, div.story.editing:hover {
-  background-color: adjust-lightness($butter-1, 20);
-  color: $aluminium-6;
-  cursor: default !important;
-}
-
-div.story.feature.accepted,
-div.story.bug.accepted,
-div.story.chore.accepted{
-  background-color: adjust-lightness($chameleon-1, 40);
 }
 
 div.story-controls {
@@ -353,22 +315,23 @@ div.story-controls {
   margin-bottom: 1em;
 
   input[type="button"] {
+    background-color: $background-color;
     flex: 1 0 auto;
     padding: 1em 0;
-    background: none;
-    border-left: none;
-    border-top: none;
-    border-right: $border;
-    border-bottom: none;
+    border-top: $border;
+    border-bottom: $border;
+    border-left: $border;
+    border-right: none;
+    color: $font-color;
   }
 
   input[type="button"]:last-child {
-    border-right: none;
+    border-right: $border;;
   }
 
   input[type="button"]:hover {
     cursor: pointer;
-    background-color: adjust-lightness($chameleon-1, 80);
+    background-color: $background-color-hover;
   }
 }
 
@@ -436,8 +399,8 @@ span.estimate_8 {
 }
 
 .story.release {
-  background-color: #333;
-  color: white;
+  background-color: #111;
+  color: $font-color;
 }
 .story.release:hover {
   background-color: #222;
@@ -453,60 +416,23 @@ span.estimate_8 {
   display: inline;
 }
 
-/* Iteration markers */
 .iteration {
-  @include icons-sprite(iteration, false, 2px, 3px);
-  background-color: #000;
-  color: #ddd;
-  padding: 0.2em 0.2em 0.2em 20px
+  padding: 10px;
+  border-bottom: $border;
+  font-style: italic;
 }
+
 .iteration .points {
   float: right;
 }
 
 .state-actions input {
   margin: 0;
-  padding: .2em .5em;
-  @include border-radius(3px);
-  border: 1px solid #333;
   cursor: pointer;
   font-size: x-small;
-  color: white;
-  @include background(linear-gradient(top, $aluminium-3, $aluminium-3*0.75));
-  border-color: $aluminium-5;
-  text-shadow:  $aluminium-5 0 1px 0;
-  @include box-shadow(0 1px 2px #aaaaaa);
-}
-.story.release .state-actions input {
-  @include box-shadow(0 1px 2px #000);
-}
-.state-actions input:active {
-  @include box-shadow(none);
+  text-transform: uppercase;
 }
 
-.state-actions input.finish {
-  @include background(linear-gradient(top, $sky-blue-1, $sky-blue-1*0.75));
-  border-color: $sky-blue-3;
-}
-.state-actions input.deliver {
-  @include background(linear-gradient(top, $butter-1, $butter-1*0.75));
-  border-color:     $butter-3;
-}
-.state-actions input.accept {
-  @include background(linear-gradient(top, $chameleon-2, $chameleon-2*0.75));
-  border-color: $chameleon-3;
-}
-.state-actions input.reject {
-  @include background(linear-gradient(top, $scarlet-red-1, $scarlet-red-1*0.75));
-  border-color:     $scarlet-red-3;
-}
-.state-actions input.restart {
-  @include background(sprite($icons-sprites,redo),
-                      linear-gradient(top, $scarlet-red-1, $scarlet-red-1*0.75));
-  background-repeat: no-repeat;
-  border-color: $scarlet-red-3;
-  padding-left: 16px;
-}
 
 table#import tr.valid, .notice {
   color: white;
@@ -524,16 +450,9 @@ ul#projects {
 }
 
 ul#projects li {
-  background: #efefef;
-  @include background(linear-gradient(top, #efefef, #dfe1e2));
-  @include box-shadow(0 1px 2px #aaaaaa);
   margin: 10px 0;
   padding: 10px;
-  border: 1px solid #efefef;
-  border-top: 1px solid #dfe1e2;
-}
-ul#projects li:hover {
-  @include background(linear-gradient(top, darken(#efefef, 10%), darken(#dfe1e2, 10%)));
+  border: $border;
 }
 
 ul#projects li h2 {
@@ -544,32 +463,25 @@ div.project_options {
   float: right;
 }
 
-ul#projects li:hover {
-  background-color: #babdb6;
-}
-
 a.button {
-  background: #efefef;
-  @include background(linear-gradient(top, #efefef, #dfe1e2));
-  @include box-shadow(0 1px 2px #aaaaaa);
-  text-shadow: white 0 1px 0;
   padding: 5px;
-  @include border-radius(5px);
-  border: 1px solid $darkgrey*1.5;
   text-decoration: none;
+  border: $border;
 }
 
-
-
-a.button:hover {
-  @include background(linear-gradient(top, $chameleon-2, $chameleon-3));
-  color: white;
-  text-shadow: $darkgrey 0 1px 0;
+input[type=button], input[type=submit] {
+  background-color: $background-color;
+  color: $font-color;
+  border: $border;
+  padding: 5px 10px;
+  cursor: pointer;
 }
+
 .tags{
   color:$sky-blue-3;
   font-size:84%;
 }
+
 // Popover Overrides
 // Custom Style Overrides
 .popover{
@@ -688,8 +600,7 @@ div.note {
   input[type=password],
   select
   textarea {
-    @include transition(border linear 0.2s, box-shadow linear 0.2s);
-    @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1));
+    background-color: $background-color;
   }
 
   input[type=text]:focus,
@@ -698,8 +609,6 @@ div.note {
   select:focus,
   textarea:focus {
     outline: 0;
-    border-color: rgba(114, 159, 207, 0.8);
-    @include box-shadow(inset 0 1px 3px rgba(0, 0, 0, 0.1), 0 0 8px rgba(114, 159, 207, 0.6));
   }
 
   input[type=text],
@@ -711,15 +620,16 @@ div.note {
     height: 14px;
     padding: 4px;
     font-size: 14px;
-    color: gray;
-    border: 1px solid #CCC;
-    @include border-radius(3px);
+    color: $font-color;
+    border: $border;
   }
+
   select {
     height: 26px;
     min-width: 220px;
     width: auto;
     margin: auto;
+    background-color: $background-color;
   }
 
   div.field-wrapper label {

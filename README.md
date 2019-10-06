@@ -4,48 +4,27 @@
 
 Original Source Code: https://github.com/fulcrum-agile/fulcrum
 
-## Database Prerequisite
+## Installation
 
-This application is using UUID as identifier.
+```bash
+# Checkout the project
+git clone https://github.com/privatt/privatt-agile-tracker.git
+cd privatt-agile-tracker
 
-You must add the following extension to your PostgreSQL installation:
+# Install the project dependencies
+gem install bundler
+bundle install
 
-    CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+bundle exec rails generate symmetric_encryption:config keys
+mkdir keys
+bundle exec rails generate symmetric_encryption:new_keys development
 
-OR, you can execute this command:
+# Set up the development database
+bundle exec rake fulcrum:setup db:setup
 
-    bundle exec rake db:setup
-
-You must be a superuser on your PostgreSQL database to execute the above
-command. With `psql`, you can add or remove the superuser role for a user
-with the following commands:
-
-    ALTER ROLE <username> WITH SUPERUSER;
-    # After the setup, remove the role
-    ALTER ROLE <username> WITH NOSUPERUSER;
-
-You can list existing roles with `\du` while using `psql`.
-
-Installation
-------------
-
-    # Checkout the project
-    $ git clone https://github.com/privatt/privatt-agile-tracker.git
-    $ cd privatt-agile-tracker
-
-    # Install the project dependencies
-    $ gem install bundler
-    $ bundle install
-
-    rails generate symmetric_encryption:config keys
-    mkdir keys
-    rails generate symmetric_encryption:new_keys development
-
-    # Set up the development database
-    $ bundle exec rake fulcrum:setup db:setup
-
-    # Start the local web server
-    $ rails server
+# Start the local web server
+bundle exec rails server
+```
 
 You should then be able to navigate to `http://localhost:3000/` in a web browser.
 You can log in with the test username `test@example.com`, password `testpass`.
