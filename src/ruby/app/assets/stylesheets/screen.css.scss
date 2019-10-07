@@ -5,9 +5,14 @@
 @import 'bootstrap';
 @import 'icons';
 
+html, body {
+  height: 100%;
+}
+
 body {
   margin: 0;
   padding: 0;
+  position: relative;
 }
 
 a img {
@@ -146,12 +151,11 @@ ul#primary-nav li.secondary ul li:hover {
 }
 
 #main {
-  margin: 1em;
-  position: relative;
-}
-
-html.stories, html.stories body, html.stories div#main {
-  height: 100%;
+  position: absolute;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  top: 118px;
 }
 
 #column-toggles {
@@ -169,25 +173,28 @@ html.stories, html.stories body, html.stories div#main {
 
 #column-toggles a.pressed {
   color: $darkgrey;
-  background-color: #cecece;
+  background-color: $background-color-hover;
 }
 
-/* stories table */
 table.stories {
-  width: 100%;
   height: 100%;
-  border-spacing: 5px 0;
 }
 
 table.stories td {
   vertical-align: top;
   background-color: $background-color;
   border: $border;
+  position: relative;
 }
 
 div.storycolumn {
-  overflow: auto;
-  padding-bottom: 80px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  position: absolute;
+  top: 26px;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 
 /* Story columns headers */
@@ -335,13 +342,12 @@ div.story-controls {
   }
 }
 
-
-
 #in_progress div.story,
 #backlog div.story,
 #chilly_bin div.story {
   cursor: move;
 }
+
 #in_progress div.story.accepted div.story {
   cursor: inherit;
 }

@@ -48,8 +48,6 @@ $(function() {
   window.projectView.velocityView = new Fulcrum.ProjectVelocityView({
     model: project, el: $('#velocity')
   });
-  window.projectView.scaleToViewport();
-  $(window).resize(projectView.scaleToViewport);
 
   setInterval(function() {
    window.projectView.model.fetch();
