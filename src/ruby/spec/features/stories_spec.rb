@@ -101,7 +101,7 @@ describe "Stories" do
       }
 
       columns.each do |column, button_text|
-        selector = "table.stories td.#{column}_column"
+        selector = ".stories .#{column}_column"
         page.should have_css(selector)
 
         # Hide the column
