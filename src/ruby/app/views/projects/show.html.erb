@@ -9,14 +9,14 @@ $(function() {
   project.current_user = new Fulcrum.User(<%= current_user.to_json.html_safe %>);
 
   var doneColumn = new Fulcrum.ColumnView({
-    id: 'done', name: '<%= t('.done') %>', el: $('td.done_column'), sortable: false
+    id: 'done', name: '<%= t('.done') %>', el: $('.done_column'), sortable: false
   }).render();
   $('#column-toggles').append(
     new Fulcrum.ColumnVisibilityButtonView({columnView: doneColumn}).render().el
   );
 
   var inProgressColumn = new Fulcrum.ColumnView({
-    id: 'in_progress', name: '<%= t('.in_progress') %>', el: $('td.in_progress_column'),
+    id: 'in_progress', name: '<%= t('.in_progress') %>', el: $('.in_progress_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
@@ -24,14 +24,14 @@ $(function() {
   );
 
   var backlogColumn = new Fulcrum.ColumnView({
-    id: 'backlog', name: '<%= t('.backlog') %>', el: $('td.backlog_column'), sortable: true
+    id: 'backlog', name: '<%= t('.backlog') %>', el: $('.backlog_column'), sortable: true
   }).render();
   $('#column-toggles').append(
     new Fulcrum.ColumnVisibilityButtonView({columnView: backlogColumn}).render().el
   );
 
   var chillyBinColumn = new Fulcrum.ColumnView({
-    id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('td.chilly_bin_column'),
+    id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('.chilly_bin_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
@@ -75,23 +75,12 @@ $(function() {
              :locals => {:project => @project, :show_column_toggles => true} %>
 <% end %>
 
-<table class="stories" width="100%">
-  <tbody>
-    <tr>
-    <% if !Fulcrum::Application.config.fulcrum.column_order or Fulcrum::Application.config.fulcrum.column_order != 'progress_to_right' %>
-      <td class="done_column" style="width: 25%"></td>
-      <td class="in_progress_column" style="width: 25%"></td>
-      <td class="backlog_column" style="width: 25%"></td>
-      <td class="chilly_bin_column" style="width: 25%"></td>
-    <% elsif Fulcrum::Application.config.fulcrum.column_order == 'progress_to_right' %>
-      <td class="chilly_bin_column" style="width: 25%"></td>
-      <td class="backlog_column" style="width: 25%"></td>
-      <td class="in_progress_column" style="width: 25%"></td>
-      <td class="done_column" style="width: 25%"></td>
-    <% end %>
-    </tr>
-  </tbody>
-</table>
+<div class="stories">
+  <div class="column done_column"></div>
+  <div class="column in_progress_column"></div>
+  <div class="column backlog_column"></div>
+  <div class="column chilly_bin_column"></div>
+</div>
 
 <div class="loading_screen">
   <div class="spinner">
