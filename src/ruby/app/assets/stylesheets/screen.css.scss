@@ -68,6 +68,7 @@ ul#primary-nav li.secondary ul {
   border: $border;
   list-style: none;
   padding: 0;
+  z-index: 900;
 }
 
 ul#primary-nav li.secondary ul li {
