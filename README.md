@@ -11,7 +11,7 @@ git clone https://github.com/privatt/privatt-agile-tracker.git
 
 ### Install the project dependencies
 ```
-gem install bundler
+gem install bundler -v 1.17.3
 bundle install
 
 bundle exec rails generate symmetric_encryption:config keys
