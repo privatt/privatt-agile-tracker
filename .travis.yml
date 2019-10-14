@@ -10,7 +10,6 @@ cache:
     - $HOME/.nvm/versions/node
 
 rvm:
-  - 2.3.8
   - 2.4.5
   - 2.5.7
 
