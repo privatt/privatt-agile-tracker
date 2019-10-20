@@ -1,6 +1,11 @@
 language: ruby
 dist: bionic
 
+addons:
+  firefox: latest
+  chrome: stable
+  postgresql: "10"
+
 services:
   - postgresql
 
@@ -18,12 +23,6 @@ gemfile: src/ruby/Gemfile
 env:
   - "DB=postgresql"
 
-
-addons:
-  firefox: latest
-  chrome: stable
-  postgresql: "10"
-
 before_install:
   - nvm install v10.16.3
   - node -v
@@ -31,8 +30,6 @@ before_install:
 
 before_script:
   - cd src/ruby
-  - gem install bundler -v 1.17.3
-  - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
   - bundle exec rails generate symmetric_encryption:new_keys test
