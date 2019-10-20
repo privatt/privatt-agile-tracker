@@ -2,6 +2,11 @@
 
 [![Build Status](https://travis-ci.org/privatt/privatt-agile-tracker.svg?branch=master)](https://travis-ci.org/privatt/privatt-agile-tracker)
 
+## Stack
+- Ruby 2.5.7
+- Rails 5.0.7.2
+- PostgreSQL 10
+
 ## Installation
 
 ### Checkout the project
@@ -11,7 +16,7 @@ git clone https://github.com/privatt/privatt-agile-tracker.git
 
 ### Install the project dependencies
 ```
-gem install bundler -v 1.17.3
+gem install bundler
 bundle install
 
 bundle exec rails generate symmetric_encryption:config keys
@@ -24,9 +29,14 @@ bundle exec rails generate symmetric_encryption:new_keys development
 bundle exec rake fulcrum:setup db:setup
 ```
 
+### Install or Reinstall Binstubs
+```
+bundle exec rails app:update:bin
+```
+
 ### Start the local web server
 ```
-bundle exec rails server
+bin/rails s
 ```
 
 You should then be able to navigate to `http://localhost:3000/` in a web browser.
