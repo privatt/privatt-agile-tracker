@@ -13,6 +13,7 @@ cache:
   bundler: true
   directories:
     - $HOME/.nvm/versions/node
+    - $HOME/.rvm/
 
 rvm:
   - 2.4.5
