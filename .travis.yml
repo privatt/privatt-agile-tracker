@@ -1,7 +1,8 @@
 language: ruby
-
-# This is going to enable build on VMs instead of containers
 dist: bionic
+
+services:
+  - postgresql
 
 cache:
   bundler: true
@@ -17,12 +18,11 @@ gemfile: src/ruby/Gemfile
 env:
   - "DB=postgresql"
 
-services:
-  - postgresql
 
 addons:
   firefox: latest
   chrome: stable
+  postgresql: "10"
 
 before_install:
   - nvm install v10.16.3
