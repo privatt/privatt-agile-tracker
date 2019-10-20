@@ -1,7 +1,7 @@
 class ApplicationController < ActionController::Base
   protect_from_forgery
 
-  before_filter :authenticate_user!, :set_locale
+  before_action :authenticate_user!, :set_locale
 
   rescue_from ActiveRecord::RecordNotFound, :with => :render_404
 
@@ -18,11 +18,11 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  private 
+  private
 
   def set_locale
     if !current_user.nil? && !current_user.locale.nil? && !current_user.locale.empty?
-      I18n.locale = current_user.locale.to_sym 
+      I18n.locale = current_user.locale.to_sym
     else
       I18n.locale = :en
     end
