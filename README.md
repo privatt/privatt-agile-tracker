@@ -34,20 +34,7 @@ You can log in with the test username `test@example.com`, password `testpass`.
 
 ## Tests
 
-To execute the tests on a server without GUI:
-
-```bash
-sudo apt-get install firefox=45.0.2+build1-0ubuntu1
-sudo apt-get install xvfb
-
-# Start the virtual screen
-/sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
-
-# Execute the tests
-bundle exec rake spec && bundle exec rake --trace spec:javascripts
-OR
-bundle exec rake travis
-```
+We are working on updating the test suite to new rails test system.
 
 ## License
 
