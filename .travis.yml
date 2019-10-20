@@ -16,6 +16,9 @@ rvm:
 env:
   - "DB=postgresql"
 
+services:
+  - postgresql
+
 addons:
   firefox: latest
   chrome: stable
