@@ -2,7 +2,7 @@ language: ruby
 
 # This is going to enable build on VMs instead of containers
 sudo: required
-dist: xenial
+dist: bionic
 
 cache:
   bundler: true
