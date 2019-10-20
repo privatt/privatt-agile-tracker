@@ -17,14 +17,12 @@ env:
   - "DB=postgresql"
 
 addons:
-  firefox: 45.0esr
+  firefox: latest
 
 before_install:
-  - nvm install v6.7.0
+  - nvm install v10.16.3
   - node -v
   - npm -v
-  - npm install -g phantomjs-prebuilt
-  - phantomjs -v
 
 before_script:
   - cd src/ruby
@@ -34,9 +32,8 @@ before_script:
   - mv config/database.yml.postgresql config/database.yml
   - bundle exec rails generate symmetric_encryption:new_keys test
   - bundle exec rake fulcrum:setup db:setup
-  - phantomjs -v
   - firefox -v
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
 
 script:
-  - "bundle exec rake travis"
+  - "bundle exec rails t"
