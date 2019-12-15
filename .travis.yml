@@ -1,43 +1,45 @@
 language: ruby
+dist: bionic
 
-# This is going to enable build on VMs instead of containers
-sudo: required
-dist: trusty
+addons:
+  firefox: latest
+  chrome: stable
+  postgresql: "10"
+
+services:
+  - postgresql
 
 cache:
   bundler: true
   directories:
     - $HOME/.nvm/versions/node
+    - $HOME/.rvm/
 
 rvm:
-  - 2.3.8
   - 2.4.5
   - 2.5.7
+
+gemfile: src/ruby/Gemfile
 
 env:
   - "DB=postgresql"
 
-addons:
-  firefox: 45.0esr
-
 before_install:
-  - nvm install v6.7.0
+  - gem update --system
+  - gem install bundler
+  - nvm install v10.16.3
   - node -v
   - npm -v
-  - npm install -g phantomjs-prebuilt
-  - phantomjs -v
 
 before_script:
   - cd src/ruby
-  - gem install bundler -v 1.17.3
-  - bundle install
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
   - bundle exec rails generate symmetric_encryption:new_keys test
   - bundle exec rake fulcrum:setup db:setup
-  - phantomjs -v
   - firefox -v
+  - google-chrome --version
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16
 
 script:
-  - "bundle exec rake travis"
+  - "bundle exec rails t"
