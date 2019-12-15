@@ -1,6 +1,6 @@
 class RegistrationsController < Devise::RegistrationsController
-  before_filter :check_registration_enabled, :only => [:new, :create]
-  before_filter :devise_params
+  before_action :check_registration_enabled, :only => [:new, :create]
+  before_action :devise_params
 
   protected
     def after_inactive_sign_up_path_for(resource)
