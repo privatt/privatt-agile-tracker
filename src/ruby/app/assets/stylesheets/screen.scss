@@ -361,14 +361,13 @@ div.story-controls {
 }
 
 span.estimate {
-  border: 1px solid #777;
   padding: 0 0.2em;
-  margin: 0 2px 0 0;
-  @include border-radius(3px);
+  margin: 0 5px 0 5px;
   vertical-align: top;
   font-size: x-small;
   font-weight: bold;
   font-style: italic;
+  color: #333;
 }
 
 span.estimate_1 {
