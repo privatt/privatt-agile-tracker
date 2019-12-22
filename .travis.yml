@@ -35,7 +35,7 @@ before_script:
   - mv config/symmetric-encryption.travis config/symmetric-encryption.yml
   - mv config/database.yml.postgresql config/database.yml
   - bundle exec rails generate symmetric_encryption:new_keys test
-  - bundle exec rake fulcrum:setup db:setup
+  - bundle exec rake agiletracker:setup db:setup
   - firefox -v
   - google-chrome --version
   - /sbin/start-stop-daemon --start --quiet --pidfile /tmp/custom_xvfb_99.pid --make-pidfile --background --exec /usr/bin/Xvfb -- :99 -ac -screen 0 1280x1024x16

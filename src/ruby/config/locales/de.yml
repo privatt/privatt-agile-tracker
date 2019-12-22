@@ -2,7 +2,7 @@
 # See https://github.com/svenfuchs/rails-i18n/tree/master/rails%2Flocale for starting points.
 
 de:
-  fulcrum:  "Fulcrum"
+  agiletracker:  "AgileTracker"
 
   log out:  "Abmelden"
   log in:   "Anmelden"
@@ -29,7 +29,7 @@ de:
 
   requested on date:          'Angefragt am {{date}}'
   requested by user on date:  'Angefragt bei {{user}} am {{date}}'
-  
+
   imported n stories:
     one: '1 Story importiert'
     other: '%{count} Stories importiert'

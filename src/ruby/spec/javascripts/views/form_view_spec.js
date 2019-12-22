@@ -1,8 +1,8 @@
-describe('Fulcrum.FormView', function() {
+describe('AgileTracker.FormView', function() {
 
   beforeEach(function() {
-    Fulcrum.FormView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.FormView();
+    AgileTracker.FormView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.FormView();
   });
 
   it("should have a form as its top level element", function() {

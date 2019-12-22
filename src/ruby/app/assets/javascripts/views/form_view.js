@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.FormView = Backbone.View.extend({
+AgileTracker.FormView = Backbone.View.extend({
   tagName: 'form',
 
   label: function(elem_id, value) {

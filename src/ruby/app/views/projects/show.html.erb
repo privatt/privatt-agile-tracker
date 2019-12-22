@@ -4,38 +4,38 @@
 $(function() {
   window.md = new Markdown.Converter();
 
-  var project = new Fulcrum.Project(<%= @project.to_json.html_safe %>);
+  var project = new AgileTracker.Project(<%= @project.to_json.html_safe %>);
   project.users.reset(<%= @project.users.to_json.html_safe %>);
-  project.current_user = new Fulcrum.User(<%= current_user.to_json.html_safe %>);
+  project.current_user = new AgileTracker.User(<%= current_user.to_json.html_safe %>);
 
-  var doneColumn = new Fulcrum.ColumnView({
+  var doneColumn = new AgileTracker.ColumnView({
     id: 'done', name: '<%= t('.done') %>', el: $('.done_column'), sortable: false
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: doneColumn}).render().el
+    new AgileTracker.ColumnVisibilityButtonView({columnView: doneColumn}).render().el
   );
 
-  var inProgressColumn = new Fulcrum.ColumnView({
+  var inProgressColumn = new AgileTracker.ColumnView({
     id: 'in_progress', name: '<%= t('.in_progress') %>', el: $('.in_progress_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: inProgressColumn}).render().el
+    new AgileTracker.ColumnVisibilityButtonView({columnView: inProgressColumn}).render().el
   );
 
-  var backlogColumn = new Fulcrum.ColumnView({
+  var backlogColumn = new AgileTracker.ColumnView({
     id: 'backlog', name: '<%= t('.backlog') %>', el: $('.backlog_column'), sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: backlogColumn}).render().el
+    new AgileTracker.ColumnVisibilityButtonView({columnView: backlogColumn}).render().el
   );
 
-  var chillyBinColumn = new Fulcrum.ColumnView({
+  var chillyBinColumn = new AgileTracker.ColumnView({
     id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('.chilly_bin_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibilityButtonView({columnView: chillyBinColumn, elementId: 'chilly_bin'}).render().el
+    new AgileTracker.ColumnVisibilityButtonView({columnView: chillyBinColumn, elementId: 'chilly_bin'}).render().el
   );
 
   // FIXME Move to view
@@ -44,8 +44,8 @@ $(function() {
   $('#chilly_bin').sortable('option', 'connectWith', '#backlog,#in_progress');
   $('#in_progress').sortable('option', 'connectWith', '#backlog,#chilly_bin');
 
-  window.projectView = new Fulcrum.ProjectView({model: project});
-  window.projectView.velocityView = new Fulcrum.ProjectVelocityView({
+  window.projectView = new AgileTracker.ProjectView({model: project});
+  window.projectView.velocityView = new AgileTracker.ProjectVelocityView({
     model: project, el: $('#velocity')
   });
 

@@ -1,19 +1,19 @@
-describe('Fulcrum.ProjectVelocityView', function() {
+describe('AgileTracker.ProjectVelocityView', function() {
 
   beforeEach(function() {
     this.model = {bind: sinon.stub()};
-    sinon.stub(Fulcrum, 'ProjectVelocityOverrideView');
+    sinon.stub(AgileTracker, 'ProjectVelocityOverrideView');
     this.overrideView = {};
-    Fulcrum.ProjectVelocityOverrideView.withArgs({model: this.model}).returns(
+    AgileTracker.ProjectVelocityOverrideView.withArgs({model: this.model}).returns(
       this.overrideView
     );
-    Fulcrum.ProjectVelocityOverrideView.prototype.template = sinon.stub();
-    this.subject = new Fulcrum.ProjectVelocityView({model: this.model});
+    AgileTracker.ProjectVelocityOverrideView.prototype.template = sinon.stub();
+    this.subject = new AgileTracker.ProjectVelocityView({model: this.model});
   });
 
   afterEach(function() {
-    Fulcrum.ProjectVelocityOverrideView.restore();
-  }); 
+    AgileTracker.ProjectVelocityOverrideView.restore();
+  });
 
   it("should have a top level element", function() {
     expect(this.subject.el.nodeName).toEqual('DIV');

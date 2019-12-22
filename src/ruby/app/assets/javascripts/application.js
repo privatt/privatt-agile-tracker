@@ -16,7 +16,7 @@
 //= require_tree ./models
 //= require_tree ./collections
 //= require_tree ./views
-//= require fulcrum
+//= require agiletracker
 //= require bootstrap
 //= require tag-it
 //= require i18n

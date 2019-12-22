@@ -2,41 +2,41 @@
 $(function() {
   window.md = new Markdown.Converter();
 
-  var project = new Fulcrum.Project({"project":{"iteration_length":1,"last_changeset_id":123,"iteration_start_day":1,"point_values":[0,1,2,3,5,8],"default_velocity":10,"id":999999,"start_date":"2012/03/08"}});
+  var project = new AgileTracker.Project({"project":{"iteration_length":1,"last_changeset_id":123,"iteration_start_day":1,"point_values":[0,1,2,3,5,8],"default_velocity":10,"id":999999,"start_date":"2012/03/08"}});
   project.users.reset([{"user":{"name":"Test User","email":"test@example.com","initials":"TU","id":1}}]);
-  project.current_user = new Fulcrum.User({"user":{"name":"Test User","email":"test@example.com","initials":"TU","id":1}});
+  project.current_user = new AgileTracker.User({"user":{"name":"Test User","email":"test@example.com","initials":"TU","id":1}});
 
   project.stories.fetch = function() {};
   window.project = project;
 
-  var done = new Fulcrum.ColumnView({
+  var done = new AgileTracker.ColumnView({
     id: 'done', name: '<%= t('.done') %>', el: $('td.done_column'), sortable: false
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibiltyButtonView({columnView: done}).render().el
+    new AgileTracker.ColumnVisibiltyButtonView({columnView: done}).render().el
   );
 
-  var in_progress = new Fulcrum.ColumnView({
+  var in_progress = new AgileTracker.ColumnView({
     id: 'in_progress', name: '<%= t('.in_progress') %>', el: $('td.in_progress_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibiltyButtonView({columnView: in_progress}).render().el
+    new AgileTracker.ColumnVisibiltyButtonView({columnView: in_progress}).render().el
   );
 
-  var backlog = new Fulcrum.ColumnView({
+  var backlog = new AgileTracker.ColumnView({
     id: 'backlog', name: '<%= t('.backlog') %>', el: $('td.backlog_column'), sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibiltyButtonView({columnView: backlog}).render().el
+    new AgileTracker.ColumnVisibiltyButtonView({columnView: backlog}).render().el
   );
 
-  var chilly_bin = new Fulcrum.ColumnView({
+  var chilly_bin = new AgileTracker.ColumnView({
     id: 'chilly_bin', name: '<%= t('.icebox') %>', el: $('td.chilly_bin_column'),
     sortable: true
   }).render();
   $('#column-toggles').append(
-    new Fulcrum.ColumnVisibiltyButtonView({columnView: chilly_bin}).render().el
+    new AgileTracker.ColumnVisibiltyButtonView({columnView: chilly_bin}).render().el
   );
 
 
@@ -92,7 +92,7 @@ $(function() {
   appendStoryTo(in_progress, {"title":"Example bug","story_type":"bug"});
   appendStoryTo(in_progress, {"title":"Example release","story_type":"release"});
 
-  appendIterationTo(done, new Fulcrum.Iteration({'number':1, stories:[]}));
+  appendIterationTo(done, new AgileTracker.Iteration({'number':1, stories:[]}));
 
   function appendStoryTo(columnView, storyAttributes, view) {
 
@@ -102,11 +102,11 @@ $(function() {
     }
     storyAttributes.id = appendStoryTo.id++;
 
-    var story = new Fulcrum.Story(storyAttributes);
+    var story = new AgileTracker.Story(storyAttributes);
     //story.collection = window.project.stories;
     window.project.stories.add(story);
     if (typeof view == 'undefined') {
-      view = new Fulcrum.StoryView({model: story});
+      view = new AgileTracker.StoryView({model: story});
     }
     view.render();
     columnView.appendView(view);
@@ -116,15 +116,15 @@ $(function() {
   function appendIterationTo(columnView, iteration, view) {
     iteration.project = window.project;
     if (typeof view == 'undefined') {
-      view = new Fulcrum.IterationView({model: iteration});
+      view = new AgileTracker.IterationView({model: iteration});
     }
     view.render();
     columnView.appendView(view);
     return view;
   }
 
-  window.projectView = new Fulcrum.ProjectView({model: project});
-  window.projectView.velocityView = new Fulcrum.ProjectVelocityView({
+  window.projectView = new AgileTracker.ProjectView({model: project});
+  window.projectView.velocityView = new AgileTracker.ProjectVelocityView({
     model: project, el: $('#velocity')
   }).render();
   window.projectView.scaleToViewport();

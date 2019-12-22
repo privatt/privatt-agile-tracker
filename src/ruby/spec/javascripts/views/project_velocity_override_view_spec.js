@@ -1,9 +1,9 @@
-describe('Fulcrum.ProjectVelocityOverrideView', function() {
+describe('AgileTracker.ProjectVelocityOverrideView', function() {
 
   beforeEach(function() {
     this.project = {};
-    Fulcrum.ProjectVelocityOverrideView.prototype.template = sinon.stub();
-    this.subject = new Fulcrum.ProjectVelocityOverrideView({model: this.project});
+    AgileTracker.ProjectVelocityOverrideView.prototype.template = sinon.stub();
+    this.subject = new AgileTracker.ProjectVelocityOverrideView({model: this.project});
   });
 
   describe("changeVelocity", function() {

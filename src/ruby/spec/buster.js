@@ -1,6 +1,6 @@
 var config = module.exports;
 
-config["Fulcrum"] = {
+config["AgileTracker"] = {
     environment: "browser",        // or "node"
     rootPath: "..",
     sources: [

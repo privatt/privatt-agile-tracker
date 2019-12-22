@@ -1,4 +1,4 @@
-describe('Fulcrum.Story', function() {
+describe('AgileTracker.Story', function() {
 
   beforeEach(function() {
     var Project = Backbone.Model.extend({
@@ -14,10 +14,10 @@ describe('Fulcrum.Story', function() {
       get: function() {}
     };
     var view = new Backbone.View();
-    this.story = new Fulcrum.Story({
+    this.story = new AgileTracker.Story({
       id: 999, title: 'Test story', position: '2.45'
     });
-    this.new_story = new Fulcrum.Story({
+    this.new_story = new AgileTracker.Story({
       title: 'New story'
     });
     this.story.collection = this.new_story.collection = collection;
@@ -379,7 +379,7 @@ describe('Fulcrum.Story', function() {
     });
 
     it("should set a notes collection", function() {
-      var story = new Fulcrum.Story({
+      var story = new AgileTracker.Story({
         notes: [{"note":{"text": "Dummy note"}}]
       });
 

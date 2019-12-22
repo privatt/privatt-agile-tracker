@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.ColumnVisibilityButtonView = Backbone.View.extend({
+AgileTracker.ColumnVisibilityButtonView = Backbone.View.extend({
 
   events: {
     'click': 'toggle'

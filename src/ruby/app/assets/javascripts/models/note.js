@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.Note = Backbone.Model.extend({
+AgileTracker.Note = Backbone.Model.extend({
 
   name: 'note',
 
@@ -20,4 +20,4 @@ Fulcrum.Note = Backbone.Model.extend({
 
 });
 
-_.defaults(Fulcrum.Note.prototype, Fulcrum.SharedModelMethods);
+_.defaults(AgileTracker.Note.prototype, AgileTracker.SharedModelMethods);

@@ -1,7 +1,7 @@
 describe("Note", function() {
 
   beforeEach(function() {
-    this.note = new Fulcrum.Note({});
+    this.note = new AgileTracker.Note({});
   });
 
   describe("user", function() {

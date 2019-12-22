@@ -6,7 +6,7 @@ require 'rails/all'
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module Fulcrum
+module AgileTracker
   class Application < Rails::Application
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration should go into files in config/initializers
@@ -24,13 +24,13 @@ module Fulcrum
     config.i18n.available_locales = ['de', 'el', 'en', 'es', 'nl', 'ja', 'pt-BR']
 
     config.autoload_paths += %W(#{config.root}/lib/validators)
-  
+
     config.active_record.observers = :story_observer
 
-    load Rails.root.join('config','fulcrum_defaults.rb')
-    if File.exist?(Rails.root.join('config', 'fulcrum.rb'))
-      load Rails.root.join('config','fulcrum.rb')
+    load Rails.root.join('config','agiletracker_defaults.rb')
+    if File.exist?(Rails.root.join('config', 'agiletracker.rb'))
+      load Rails.root.join('config','agiletracker.rb')
     end
-    config.fulcrum = ::Configuration.for 'fulcrum'
+    config.agiletracker = ::Configuration.for 'agiletracker'
   end
 end

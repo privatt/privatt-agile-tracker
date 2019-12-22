@@ -1,11 +1,11 @@
-describe('Fulcrum.UserCollection', function() {
+describe('AgileTracker.UserCollection', function() {
 
   beforeEach(function() {
     var User = Backbone.Model.extend({
       name: 'user'
     });
 
-    this.users = new Fulcrum.UserCollection();
+    this.users = new AgileTracker.UserCollection();
     this.users.add(new User({id: 1, name: 'User 1'}));
     this.users.add(new User({id: 2, name: 'User 2'}));
   });

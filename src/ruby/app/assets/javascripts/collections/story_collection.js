@@ -1,9 +1,9 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.StoryCollection = Backbone.Collection.extend({
-  model: Fulcrum.Story,
+AgileTracker.StoryCollection = Backbone.Collection.extend({
+  model: AgileTracker.Story,
 
   initialize: function() {
     this.bind('change:position', this.sort);

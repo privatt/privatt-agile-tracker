@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.SharedModelMethods = {
+AgileTracker.SharedModelMethods = {
 
   // Returns the translated name of an attribute
   humanAttributeName: function(attribute) {

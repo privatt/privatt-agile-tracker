@@ -1,4 +1,4 @@
-describe("Fulcrum.ProjectView", function() {
+describe("AgileTracker.ProjectView", function() {
 
   beforeEach(function() {
     this.model = {};
@@ -6,8 +6,8 @@ describe("Fulcrum.ProjectView", function() {
     this.model.velocity = sinon.stub();
     this.model.velocityIsFake = sinon.stub();
     this.model.stories = {fetch: sinon.stub(), bind: sinon.stub()};
-    Fulcrum.ProjectView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.ProjectView({model: this.model});
+    AgileTracker.ProjectView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.ProjectView({model: this.model});
   });
 
   describe("addColumnView", function() {

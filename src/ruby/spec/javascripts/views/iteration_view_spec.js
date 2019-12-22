@@ -1,4 +1,4 @@
-describe('Fulcrum.IterationView', function() {
+describe('AgileTracker.IterationView', function() {
 
   beforeEach(function() {
     var Iteration = Backbone.Model.extend({
@@ -7,8 +7,8 @@ describe('Fulcrum.IterationView', function() {
       startDate: function() { return new Date('2011/09/26'); }
     });
     this.iteration = new Iteration({'number': 1});
-    Fulcrum.IterationView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.IterationView({model: this.iteration});
+    AgileTracker.IterationView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.IterationView({model: this.iteration});
   });
 
   it("should have a div as its top level element", function() {

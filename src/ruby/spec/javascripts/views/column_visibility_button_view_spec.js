@@ -1,12 +1,12 @@
-describe("Fulcrum.ColumnVisibilityButtonView", function() {
-  
+describe("AgileTracker.ColumnVisibilityButtonView", function() {
+
   beforeEach(function() {
     this.columnView = {
       name: sinon.stub().returns('Dummy'),
       bind: sinon.stub()
     };
-    Fulcrum.ColumnVisibilityButtonView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.ColumnVisibilityButtonView({columnView: this.columnView});
+    AgileTracker.ColumnVisibilityButtonView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.ColumnVisibilityButtonView({columnView: this.columnView});
   });
 
   it("should have <a> as the tagName",function() {
@@ -16,13 +16,13 @@ describe("Fulcrum.ColumnVisibilityButtonView", function() {
   it("should set its content from the ColumnView title", function() {
     expect(this.view.render().$el.html()).toEqual(this.columnView.name());
   });
-  
+
   it("should set its class from the ColumnView id", function() {
     expect(this.view.render().$el.attr('class')).toEqual('hide_' + this.columnView.id);
   });
 
   describe('toggle', function() {
-    
+
     beforeEach(function() {
       this.columnView.toggle = sinon.stub();
     });

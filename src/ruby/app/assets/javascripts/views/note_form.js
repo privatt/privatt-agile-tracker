@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.NoteForm = Fulcrum.FormView.extend({
+AgileTracker.NoteForm = AgileTracker.FormView.extend({
 
   tagName: 'div',
 
@@ -21,7 +21,7 @@ Fulcrum.NoteForm = Fulcrum.FormView.extend({
 	events: {
     "click input": "saveEdit"
 	},
-	
+
 	saveEdit: function() {
     this.disableForm();
 

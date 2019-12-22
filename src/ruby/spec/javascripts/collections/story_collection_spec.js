@@ -1,12 +1,12 @@
-describe('Fulcrum.StoryCollection', function() {
+describe('AgileTracker.StoryCollection', function() {
 
   beforeEach(function() {
-    this.story1 = new Fulcrum.Story({id: 1, title: "Story 1", position: '10.0'});
-    this.story2 = new Fulcrum.Story({id: 2, title: "Story 2", position: '20.0'});
-    this.story3 = new Fulcrum.Story({id: 3, title: "Story 3", position: '30.0'});
+    this.story1 = new AgileTracker.Story({id: 1, title: "Story 1", position: '10.0'});
+    this.story2 = new AgileTracker.Story({id: 2, title: "Story 2", position: '20.0'});
+    this.story3 = new AgileTracker.Story({id: 3, title: "Story 3", position: '30.0'});
     this.story1.labels = this.story2.labels = this.story3.labels = function() { return []; };
 
-    this.stories = new Fulcrum.StoryCollection();
+    this.stories = new AgileTracker.StoryCollection();
     this.stories.url = '/foo';
     this.stories.add([this.story3, this.story2, this.story1]);
   });
