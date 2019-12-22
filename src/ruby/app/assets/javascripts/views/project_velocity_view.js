@@ -1,14 +1,14 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.ProjectVelocityView = Backbone.View.extend({
+AgileTracker.ProjectVelocityView = Backbone.View.extend({
 
   className: 'velocity',
 
   initialize: function() {
     _.bindAll(this, 'setFakeClass', 'render');
-    this.override_view = new Fulcrum.ProjectVelocityOverrideView({model: this.model});
+    this.override_view = new AgileTracker.ProjectVelocityOverrideView({model: this.model});
     this.model.bind('change:userVelocity', this.setFakeClass);
     this.model.bind('rebuilt-iterations', this.render);
   },

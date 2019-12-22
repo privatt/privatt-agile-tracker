@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.IterationView = Backbone.View.extend({
+AgileTracker.IterationView = Backbone.View.extend({
 
   template: JST['templates/iteration'],
 

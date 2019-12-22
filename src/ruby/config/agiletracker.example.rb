@@ -1,4 +1,4 @@
-Configuration.for('fulcrum') do
+Configuration.for('agiletracker') do
   # Set this to the domain name of your installation.  Env var APP_HOST
   #app_host 'example.com'
 

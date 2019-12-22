@@ -1,5 +1,5 @@
 es:
-  fulcrum:  "Fulcrum"
+  agiletracker:  "AgileTracker"
 
   log out:  "Termina sesión"
   log in:   "Inicia sesión"
@@ -31,7 +31,7 @@ es:
       the iteration starts on x with length of x weeks:
         one:    "Las iteraciones empiezan en %{day} con una duración de 1 semana"
         other:    "Las iteraciones empiezan en %{day} con una duración de %{count} semanas"
-  
+
     show:
       done: "Terminadas"
       in_progress: "En progreso"
@@ -54,7 +54,7 @@ es:
     - vie
     - sáb
     abbr_month_names:
-    - 
+    -
     - ene
     - feb
     - mar
@@ -80,7 +80,7 @@ es:
       long: ! '%A, %d de %B de %Y'
       short: ! '%d de %b'
     month_names:
-    - 
+    -
     - enero
     - febrero
     - marzo

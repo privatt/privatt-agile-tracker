@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.ProjectVelocityOverrideView = Backbone.View.extend({
+AgileTracker.ProjectVelocityOverrideView = Backbone.View.extend({
 
   className: 'velocity_override_container',
 

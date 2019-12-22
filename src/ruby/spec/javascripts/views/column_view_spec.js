@@ -1,8 +1,8 @@
-describe("Fulcrum.ColumnView", function() {
+describe("AgileTracker.ColumnView", function() {
 
   beforeEach(function() {
-    Fulcrum.ColumnView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.ColumnView({
+    AgileTracker.ColumnView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.ColumnView({
       id: 'dummy_column', name: 'Dummy Column'
     });
   });
@@ -96,7 +96,7 @@ describe("Fulcrum.ColumnView", function() {
     beforeEach(function() {
       this.view.$el.is = sinon.stub();
     });
-      
+
     it("returns true if the column is hidden", function() {
       this.view.$el.is.withArgs(':hidden').returns(true);
       expect(this.view.hidden()).toEqual(true);

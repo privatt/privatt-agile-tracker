@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.Project = Backbone.Model.extend({
+AgileTracker.Project = Backbone.Model.extend({
   name: 'project',
 
   initialize: function(args) {
@@ -11,11 +11,11 @@ Fulcrum.Project = Backbone.Model.extend({
 
     this.bind('change:last_changeset_id', this.updateChangesets);
 
-    this.stories = new Fulcrum.StoryCollection();
+    this.stories = new AgileTracker.StoryCollection();
     this.stories.url = this.url() + '/stories';
     this.stories.project = this;
 
-    this.users = new Fulcrum.UserCollection();
+    this.users = new AgileTracker.UserCollection();
     this.users.url = this.url() + '/users';
     this.users.project = this;
 
@@ -263,7 +263,7 @@ Fulcrum.Project = Backbone.Model.extend({
 
     _.each(doneNumbers, function(iterationNumber) {
       var stories = doneIterations[iterationNumber];
-      var iteration = new Fulcrum.Iteration({
+      var iteration = new AgileTracker.Iteration({
         'number': iterationNumber, 'stories': stories, column: '#done'
       });
 
@@ -271,7 +271,7 @@ Fulcrum.Project = Backbone.Model.extend({
 
     });
 
-    var currentIteration = new Fulcrum.Iteration({
+    var currentIteration = new AgileTracker.Iteration({
       'number': this.currentIterationNumber(),
       'stories': this.stories.column('#in_progress'),
       'maximum_points': this.velocity(), 'column': '#in_progress'
@@ -284,7 +284,7 @@ Fulcrum.Project = Backbone.Model.extend({
     //
     // Backlog column
     //
-    var backlogIteration = new Fulcrum.Iteration({
+    var backlogIteration = new AgileTracker.Iteration({
       'number': currentIteration.get('number') + 1,
       'column': '#backlog', 'maximum_points': this.velocity()
     });
@@ -314,7 +314,7 @@ Fulcrum.Project = Backbone.Model.extend({
         // next iteration that can have a story added is the current + 4.
         var nextNumber = backlogIteration.get('number') + 1 + Math.ceil(backlogIteration.overflowsBy() / that.velocity());
 
-        backlogIteration = new Fulcrum.Iteration({
+        backlogIteration = new AgileTracker.Iteration({
           'number': nextNumber, 'column': '#backlog',
           'maximum_points': that.velocity()
         });
@@ -341,7 +341,7 @@ Fulcrum.Project = Backbone.Model.extend({
     // If there is a gap between the last iteration and this one, fill
     // the gap with empty iterations
     this.iterations = this.iterations.concat(
-      Fulcrum.Iteration.createMissingIterations(columnForMissingIterations, lastIteration, iteration)
+      AgileTracker.Iteration.createMissingIterations(columnForMissingIterations, lastIteration, iteration)
     );
 
     this.iterations.push(iteration);

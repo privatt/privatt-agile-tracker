@@ -1,5 +1,5 @@
 pt-BR:
-  fulcrum:  "Fulcrum"
+  agiletracker:  "AgileTracker"
 
   log out:  "Sair"
   log in:   "Entrar"
@@ -38,7 +38,7 @@ pt-BR:
   n weeks:
     one: '1 semana'
     other: '%{count} semanas'
-  
+
   keycuts:
     keyboard_shortcuts: Atalhos de teclado
     help: Ajuda (this)
@@ -52,7 +52,7 @@ pt-BR:
     toggle_my_work: Alternar meu trabalho
     toggle_labels_searches: Alternar etiquetas &amp; pesquisadas
     toggle_current: Alternar atual
-  
+
   activerecord:
     models:
       user:

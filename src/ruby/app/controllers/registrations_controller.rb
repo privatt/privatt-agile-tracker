@@ -8,7 +8,7 @@ class RegistrationsController < Devise::RegistrationsController
     end
 
     def check_registration_enabled
-      if Fulcrum::Application.config.fulcrum.disable_registration
+      if AgileTracker::Application.config.agiletracker.disable_registration
         render_404 and return
       end
     end

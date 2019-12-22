@@ -1,9 +1,9 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.UserCollection = Backbone.Collection.extend({
-  model: Fulcrum.User,
+AgileTracker.UserCollection = Backbone.Collection.extend({
+  model: AgileTracker.User,
 
   forSelect: function() {
     return this.map(function(user) {

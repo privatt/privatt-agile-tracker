@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.StoryView = Fulcrum.FormView.extend({
+AgileTracker.StoryView = AgileTracker.FormView.extend({
 
   template: JST['templates/story'],
 
@@ -440,9 +440,9 @@ Fulcrum.StoryView = Fulcrum.FormView.extend({
     this.model.notes.each(function(note) {
       var view;
       if (note.isNew()) {
-        view = new Fulcrum.NoteForm({model: note});
+        view = new AgileTracker.NoteForm({model: note});
       } else {
-        view = new Fulcrum.NoteView({model: note});
+        view = new AgileTracker.NoteView({model: note});
       }
       notelist.append(view.render().el);
     });

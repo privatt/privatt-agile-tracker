@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.Iteration = Backbone.Model.extend({
+AgileTracker.Iteration = Backbone.Model.extend({
 
   name: 'iteration',
 

@@ -1,4 +1,4 @@
-namespace :fulcrum do
+namespace :agiletracker do
   desc "Set up database yaml."
   task :setup do
     db = ENV['DB'] || 'sqlite'

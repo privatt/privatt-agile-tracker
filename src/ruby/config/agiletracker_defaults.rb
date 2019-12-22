@@ -1,4 +1,4 @@
-Configuration.for('fulcrum') do
+Configuration.for('agiletracker') do
   # On Heroku, ensure you `heroku config:add APP_HOST=appname.herokuapp.com`
   app_host ENV['APP_HOST'] || '127.0.0.1:3000'
 

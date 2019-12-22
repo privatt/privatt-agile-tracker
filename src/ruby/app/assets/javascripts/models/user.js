@@ -1,7 +1,7 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.User = Backbone.Model.extend({
+AgileTracker.User = Backbone.Model.extend({
   name: 'user'
 });

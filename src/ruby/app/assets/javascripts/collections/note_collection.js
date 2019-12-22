@@ -1,9 +1,9 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.NoteCollection = Backbone.Collection.extend({
-  model: Fulcrum.Note,
+AgileTracker.NoteCollection = Backbone.Collection.extend({
+  model: AgileTracker.Note,
 
   url: function() {
     return this.story.url() + '/notes';

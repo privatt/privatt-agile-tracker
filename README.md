@@ -26,7 +26,7 @@ bundle exec rails generate symmetric_encryption:new_keys development
 
 ### Set up the development database
 ```
-bundle exec rake fulcrum:setup db:setup
+bundle exec rake agiletracker:setup db:setup
 ```
 
 ### Install or Reinstall Binstubs

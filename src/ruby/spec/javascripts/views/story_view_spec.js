@@ -1,4 +1,4 @@
-describe('Fulcrum.StoryView', function() {
+describe('AgileTracker.StoryView', function() {
 
   beforeEach(function() {
     window.projectView = {
@@ -28,11 +28,11 @@ describe('Fulcrum.StoryView', function() {
     this.story = new Story({id: 999, title: 'Story'});
     this.new_story = new Story({title: 'New Story'});
     this.story.notes = this.new_story.notes = new NotesCollection();
-    Fulcrum.StoryView.prototype.template = sinon.stub();
-    this.view = new Fulcrum.StoryView({
+    AgileTracker.StoryView.prototype.template = sinon.stub();
+    this.view = new AgileTracker.StoryView({
       model: this.story
     });
-    this.new_story_view = new Fulcrum.StoryView({
+    this.new_story_view = new AgileTracker.StoryView({
       model: this.new_story
     });
 
@@ -153,7 +153,7 @@ describe('Fulcrum.StoryView', function() {
   describe("cancel edit", function() {
 
     it("should remove itself when edit cancelled if its new", function() {
-      var view = new Fulcrum.StoryView({model: this.new_story});
+      var view = new AgileTracker.StoryView({model: this.new_story});
       var spy = sinon.spy(this.new_story, "clear");
 
       view.cancelEdit();
@@ -398,13 +398,13 @@ describe('Fulcrum.StoryView', function() {
 
     it("binds change:notes to renderNotesCollection()", function() {
       var spy = sinon.spy(this.story, 'bind');
-      var view = new Fulcrum.StoryView({model: this.story});
+      var view = new AgileTracker.StoryView({model: this.story});
       expect(spy).toHaveBeenCalledWith('change:notes', view.renderNotesCollection);
     });
 
     it("binds change:notes to addEmptyNote()", function() {
       var spy = sinon.spy(this.story, 'bind');
-      var view = new Fulcrum.StoryView({model: this.story});
+      var view = new AgileTracker.StoryView({model: this.story});
       expect(spy).toHaveBeenCalledWith('change:notes', view.addEmptyNote);
     });
 

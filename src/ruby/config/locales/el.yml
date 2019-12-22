@@ -13,7 +13,7 @@ el:
         - Παρ
         - Σαβ
         abbr_month_names:
-        - 
+        -
         - Ιαν.
         - Φεβ.
         - Μαρ.
@@ -39,7 +39,7 @@ el:
           long: ! '%e %B %Y'
           short: ! '%d %b'
         month_names:
-        - 
+        -
         - Ιανουάριος
         - Φεβρουάριος
         - Μάρτιος
@@ -207,9 +207,9 @@ el:
       activerecord:
         errors:
           <<: *errors
-          
-  # FULCRUM TRANSLATIONS
-  fulcrum:  Fulcrum
+
+  # AGILETRACKER TRANSLATIONS
+  agiletracker:  AgileTracker
 
   log out:  αποσύνδεση
   log in:   σύνδεση
@@ -239,7 +239,7 @@ el:
 
   requested on date:          'Ζητήθηκε στις {{date}}'
   requested by user on date:  'Ζητήθηκε απο {{user}} στις {{date}}'
-  
+
   keycuts:
     keyboard_shortcuts: Πλήκτρα συντομεύσεων
     help: Βοήθεια (την βλέπεις τώρα)
@@ -253,7 +253,7 @@ el:
     toggle_my_work: Η δουλειά μου
     toggle_labels_searches: Ετικέτες / Αναζήτηση
     toggle_current: Σε εξέλιξη
-  
+
   activerecord:
     models:
       user: 'μέλος'

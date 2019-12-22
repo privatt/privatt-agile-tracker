@@ -1,8 +1,8 @@
-if (typeof Fulcrum == 'undefined') {
-  Fulcrum = {};
+if (typeof AgileTracker == 'undefined') {
+  AgileTracker = {};
 }
 
-Fulcrum.Story = Backbone.Model.extend({
+AgileTracker.Story = Backbone.Model.extend({
   name: 'story',
 
   i18nScope: 'activerecord.attributes.story',
@@ -233,7 +233,7 @@ Fulcrum.Story = Backbone.Model.extend({
 
   // Initialize the notes collection on this story, and populate if necessary
   initNotes: function() {
-    this.notes = new Fulcrum.NoteCollection();
+    this.notes = new AgileTracker.NoteCollection();
     this.notes.story = this;
     this.populateNotes();
   },
@@ -252,4 +252,4 @@ Fulcrum.Story = Backbone.Model.extend({
   }
 });
 
-_.defaults(Fulcrum.Story.prototype, Fulcrum.SharedModelMethods);
+_.defaults(AgileTracker.Story.prototype, AgileTracker.SharedModelMethods);

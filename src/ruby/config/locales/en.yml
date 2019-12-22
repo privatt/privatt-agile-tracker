@@ -3,7 +3,7 @@
 
 en:
   app-name: "Privatt Agile Tracker"
-  fulcrum:  "Fulcrum"
+  agiletracker:  "AgileTracker"
 
   log out:  "Log out"
   log in:   "Log in"
