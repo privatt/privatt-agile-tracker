@@ -22,11 +22,16 @@ div.story {
     }
   }
 
+  .story-created-at {
+    font-size: 12px;
+    font-style: italic;
+  }
+
   .edit-title {
-    padding-bottom: 1em;
+    padding: 1em 0;
     border-bottom: $border;
 
-    .title {
+    & > input[type="text"] {
       padding: 0.5em;
       border: $border;
     }
