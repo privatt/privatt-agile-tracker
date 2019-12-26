@@ -277,6 +277,13 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
 
       this.$el.append(
         this.makeFormControl(function(div) {
+          $(div).addClass('story-created-at');
+          $(div).append('Creation Date: ' + this.model.escape('created_at'));
+        })
+      );
+
+      this.$el.append(
+        this.makeFormControl(function(div) {
           $(div).addClass('edit-title');
           $(div).append(this.textField("title", {
             'class' : 'title',
