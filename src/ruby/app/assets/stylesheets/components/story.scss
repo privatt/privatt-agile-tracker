@@ -91,11 +91,72 @@ div.story:hover {
 
 .story-icons {
   padding: 7px 5px 5px 5px;
-  width: 55px;
+  width: 60px;
   flex-shrink: 0;
+  display: flex;
+
+  .estimate {
+    border: $border;
+    display: inline-block;
+    width: 14px;
+    height: 14px;
+    text-align: center;
+    font-size: 10px;
+    font-weight: bold;
+    color: $font-color;
+    border-radius: 3px;
+    line-height: 0;
+    margin-left: 5px;
+
+    & > .content {
+      margin-top: 7px;
+      line-height: 0;
+    }
+  }
+
+  .estimate_1 {
+    @include background(linear-gradient(bottom,
+        #333 12.5%,
+        $background-color 12.5%));
+  }
+  .estimate_2 {
+    @include background(linear-gradient(bottom,
+        #333 25%,
+        $background-color 25%));
+  }
+  .estimate_3 {
+    @include background(linear-gradient(bottom,
+        #333 37.5%,
+        $background-color 37.5%));
+  }
+  .estimate_4 {
+    @include background(linear-gradient(bottom,
+        #333 50%,
+        $background-color 50%));
+  }
+  .estimate_5 {
+    @include background(linear-gradient(bottom,
+        #333 62.5%,
+        $background-color 62.5%));
+  }
+  .estimate_6 {
+    @include background(linear-gradient(bottom,
+        #333 75%,
+        $background-color 75%));
+  }
+  .estimate_7 {
+    @include background(linear-gradient(bottom,
+        #333 87.5%,
+        $background-color 87.5%));
+  }
+  .estimate_8 {
+    @include background(linear-gradient(bottom,
+        #333 100%,
+        $background-color 100%));
+  }
 
   .icons-details {
-    margin-left: 3px;
+    margin-left: 5px;
   }
 }
 
@@ -167,56 +228,6 @@ div.story-controls {
 
 #in_progress div.story.accepted div.story {
   cursor: inherit;
-}
-
-span.estimate {
-  padding: 0 0.2em;
-  vertical-align: top;
-  font-size: x-small;
-  font-weight: bold;
-  font-style: italic;
-  color: #333;
-}
-
-span.estimate_1 {
-  @include background(linear-gradient(bottom,
-      $orange 12.5%,
-      white 12.5%));
-}
-span.estimate_2 {
-  @include background(linear-gradient(bottom,
-      $orange 25%,
-      white 25%));
-}
-span.estimate_3 {
-  @include background(linear-gradient(bottom,
-      $orange 37.5%,
-      white 37.5%));
-}
-span.estimate_4 {
-  @include background(linear-gradient(bottom,
-      $orange 50%,
-      white 50%));
-}
-span.estimate_5 {
-  @include background(linear-gradient(bottom,
-      $orange 62.5%,
-      white 62.5%));
-}
-span.estimate_6 {
-  @include background(linear-gradient(bottom,
-      $orange 75%,
-      white 75%));
-}
-span.estimate_7 {
-  @include background(linear-gradient(bottom,
-      $orange 87.5%,
-      white 87.5%));
-}
-span.estimate_8 {
-  @include background(linear-gradient(bottom,
-      $orange 100%,
-      white 100%));
 }
 
 .story.release {
