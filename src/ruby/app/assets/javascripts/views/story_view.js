@@ -3,10 +3,9 @@ if (typeof AgileTracker == 'undefined') {
 }
 
 AgileTracker.StoryView = AgileTracker.FormView.extend({
-
   template: JST['templates/story'],
-
   tagName: 'div',
+  saveInProgress: false,
 
   initialize: function() {
     _.bindAll(this, "render", "highlight", "moveColumn", "setClassName",
@@ -51,7 +50,6 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
   },
 
   events: {
-    "click": "startEdit",
     "click #submit": "saveEdit",
     "click #cancel": "cancelEdit",
     "click .transition": "transition",
@@ -176,7 +174,6 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
   startEdit: function(e) {
     if (this.eventShouldExpandStory(e)) {
       this.model.set({editing: true, editingDescription: false});
-      this.removeHoverbox();
     }
   },
 
@@ -278,7 +275,7 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
       this.$el.append(
         this.makeFormControl(function(div) {
           $(div).addClass('story-created-at');
-          $(div).append('Creation Date: ' + this.model.escape('created_at'));
+          $(div).append('Creation Date: ' + this.model.created_at());
         })
       );
 
@@ -388,11 +385,19 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
 
       this.renderNotes();
 
-    } else {
+    }
+    else {
       this.$el.removeClass('editing');
       this.$el.html(this.template({story: this.model, view: this}));
+
+      var storyTitle = this.$el.find('.story-title')[0];
+      storyTitle.addEventListener("click", (e) => {
+        this.startEdit(e);
+      });
     }
+
     this.hoverBox();
+
     return this;
   },
 
@@ -406,8 +411,6 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
     this.className = this.el.className = className;
     return this;
   },
-
-  saveInProgress: false,
 
   disableForm: function() {
     this.$el.find('input,select,textarea').attr('disabled', 'disabled');
@@ -475,26 +478,52 @@ AgileTracker.StoryView = AgileTracker.FormView.extend({
     this.$el.find('a.collapse,a.expand').removeClass(/icons-/).addClass('icons-throbber');
   },
 
-  enableForm: function() {
-    this.$el.find('a.collapse').removeClass(/icons-/).addClass("icons-collapse");
-  },
-
-  // FIXME Move to separate view
   hoverBox: function(){
     var view  = this;
-    this.$el.find('.popover-activate').popover({
+    var popoverActivator = this.$el.find('.popover-activate');
+
+    popoverActivator.popover({
       title: function(){
         return view.model.get("title");
       },
       content: function(){
         return JST['templates/story_hover']({story: view.model});
       },
-      // A small delay to stop the popovers triggering whenever the mouse is
-      // moving around
-      delay: 200,
       html: true,
-      trigger: 'hover'
+      trigger: 'manual'
     });
+
+    var divElement = popoverActivator[0]
+    if (divElement !== undefined) {
+      var appHtml = document.getElementById("app-html");
+      var shown = false;
+
+      divElement.addEventListener("click", function(e) {
+        if (shown === true) {
+          popoverActivator.popover("hide");
+        }
+        else {
+          popoverActivator.popover("show");
+        }
+
+        shown = !shown;
+        e.menuClicked = true;
+      });
+
+      appHtml.addEventListener("click", (e) => {
+        if (e.menuClicked) { return; }
+        if (shown === true) {
+          var popover = this.$el.find('.popover');
+          var target = e.target;
+          var exist = popover.find(target)[0];
+
+          if (exist === undefined) {
+            popoverActivator.popover("hide");
+            shown = false;
+          }
+        }
+      });
+    }
   },
 
   removeHoverbox: function() {

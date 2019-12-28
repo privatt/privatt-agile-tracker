@@ -4,9 +4,7 @@ if (typeof AgileTracker == 'undefined') {
 
 AgileTracker.Story = Backbone.Model.extend({
   name: 'story',
-
   i18nScope: 'activerecord.attributes.story',
-
   timestampFormat: 'd mmm yyyy, h:MMtt',
 
   initialize: function(args) {

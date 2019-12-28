@@ -1,0 +1,38 @@
+.notes {
+  max-height: 300px;
+  overflow-y: auto;
+  margin-top: 10px;
+  padding: 0;
+}
+
+// Notes
+div.note {
+  padding-left: 5px;
+  border-left: $border;
+
+  p {
+    padding: 0;
+  }
+
+  div.note_meta {
+    color: $aluminium-4;
+    font-style: italic;
+    font-size: x-small;
+    text-align: left;
+  }
+}
+
+.note:first-child {
+  margin-top: 0;
+}
+
+
+.note_form {
+  // The submit button while the server is saving the note.
+  input.saving {
+    padding-left: 16px;
+    background-image: url('throbber.gif');
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+}

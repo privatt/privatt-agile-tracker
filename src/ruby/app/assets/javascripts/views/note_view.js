@@ -3,11 +3,8 @@ if (typeof AgileTracker == 'undefined') {
 }
 
 AgileTracker.NoteView = Backbone.View.extend({
-
   template: JST['templates/note'],
-
   tagName: 'div',
-
   className: 'note',
 
   events: {
