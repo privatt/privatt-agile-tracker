@@ -194,7 +194,13 @@ AgileTracker.Story = Backbone.Model.extend({
 
   created_at: function() {
     var d = new Date(this.get('created_at'));
-    return d.format(this.timestampFormat);
+
+    if (!isNaN(d)) {
+      return d.format(this.timestampFormat);
+    }
+    else {
+      return "";
+    }
   },
 
   hasDetails: function() {
