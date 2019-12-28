@@ -3,9 +3,7 @@ if (typeof AgileTracker == 'undefined') {
 }
 
 AgileTracker.IterationView = Backbone.View.extend({
-
   template: JST['templates/iteration'],
-
   className: 'iteration',
 
   render: function() {
