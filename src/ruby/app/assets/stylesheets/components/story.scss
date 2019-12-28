@@ -160,6 +160,10 @@ div.story:hover {
   }
 }
 
+.story-icons:hover {
+  cursor: pointer;
+}
+
 .story-title {
   padding: 5px;
   flex-grow: 1;
@@ -168,6 +172,10 @@ div.story:hover {
   word-wrap: break-word;
   word-break: break-all;
   word-break: break-word;
+}
+
+.story-title:hover {
+  cursor: move;
 }
 
 .state-actions {
@@ -218,12 +226,6 @@ div.story-controls {
     cursor: pointer;
     background-color: $background-color-hover;
   }
-}
-
-#in_progress div.story,
-#backlog div.story,
-#chilly_bin div.story {
-  cursor: move;
 }
 
 #in_progress div.story.accepted div.story {

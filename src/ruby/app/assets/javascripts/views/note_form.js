@@ -3,9 +3,7 @@ if (typeof AgileTracker == 'undefined') {
 }
 
 AgileTracker.NoteForm = AgileTracker.FormView.extend({
-
   tagName: 'div',
-
   className: 'note_form',
 
   initialize: function() {
