@@ -5,7 +5,6 @@
 ## Stack
 - Ruby 2.5.7
 - Rails 5.0.7.2
-- PostgreSQL 10
 
 ## Installation
 
@@ -18,7 +17,10 @@ git clone https://github.com/privatt/privatt-agile-tracker.git
 ```
 gem install bundler
 bundle install
+```
 
+### Initialize the encryption module
+```
 bundle exec rails generate symmetric_encryption:config keys
 mkdir keys
 bundle exec rails generate symmetric_encryption:new_keys development
@@ -48,14 +50,14 @@ We are working on updating the test suite to new rails test system.
 
 ## License
 
-Copyright (c) Privatt Inc. 2016 - 2019
+Copyright (c) Privatt Inc. 2016 - 2020
 
 Copyright (c) 2015-2016 Jimmy Beaudoin
 
 Copyright 2011-2015, Malcolm Locke.
 
 Privatt Agile Tracker is made available under the Affero GPL license version 3, see
-LICENSE.txt.
+[LICENSE.txt](LICENSE.txt).
 
 ## Ref.
 

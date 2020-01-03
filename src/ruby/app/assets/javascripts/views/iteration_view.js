@@ -20,5 +20,4 @@ AgileTracker.IterationView = Backbone.View.extend({
       return this.model.points();
     }
   }
-
 });
