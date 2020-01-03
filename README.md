@@ -57,7 +57,7 @@ Copyright (c) 2015-2016 Jimmy Beaudoin
 Copyright 2011-2015, Malcolm Locke.
 
 Privatt Agile Tracker is made available under the Affero GPL license version 3, see
-LICENSE.txt.
+[LICENSE.txt](LICENSE.txt).
 
 ## Ref.
 
