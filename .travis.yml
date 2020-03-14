@@ -25,7 +25,7 @@ env:
   - "DB=postgresql"
 
 before_install:
-  - gem install bundler
+  - gem install bundler -v 2.0.2
   - nvm install v10.16.3
   - node -v
   - npm -v
