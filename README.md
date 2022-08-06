@@ -50,7 +50,7 @@ We are working on updating the test suite to new rails test system.
 
 ## License
 
-Copyright (c) Privatt Inc. 2016 - 2020
+Copyright (c) Privatt Inc. 2016 - 2022
 
 Copyright (c) 2015-2016 Jimmy Beaudoin
 
